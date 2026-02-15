@@ -113,6 +113,25 @@
                 max-width: none;
             }
         }
+        
+        .mockup-container {
+            margin: 30px 0;
+            perspective: 1000px;
+        }
+        
+        .hero-mockup {
+            max-width: 100%;
+            width: 320px; /* Tamanho ideal para não ocupar a tela toda */
+            height: auto;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3)); /* Sombra forte para destacar do fundo */
+            animation: flutuar 3s ease-in-out infinite;
+        }
+        
+        @keyframes flutuar {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); } /* Sobe um pouquinho */
+            100% { transform: translateY(0px); }
+        }
     </style>
 </head>
 <body>
@@ -123,6 +142,9 @@
         <h1>Aprovação no Concurso Prefeitura de Capetinga/MG</h1>
         <img src="img/capetinga.png" alt="Brasão Prefeitura Capetinga" class="header-logo">
         <p style="font-size: 1.2em;">Cargo: <strong>Professor de Educação Básica</strong></p>
+        <div class="mockup-container">
+            <img src="img/mockup-apostila.png" alt="Apostila Digital no Tablet" class="hero-mockup">
+        </div>
         <p>Teoria focada no edital + Questões Comentadas</p>
     </div>
 </header>
@@ -156,6 +178,32 @@
             <a href="SEU_LINK_HOTMART_DE_390_REAIS" class="cta-button">GARANTIR MINHA VAGA AGORA</a>
         </div>
     </div>
+
+    <section style="background: white; padding: 60px 20px; margin-top: 50px;">
+    <div class="container" style="max-width: 800px;">
+        <h2 style="text-align: center; color: var(--primary);">Quem preparou este material?</h2>
+        
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 30px; margin-top: 40px;">
+            
+            <div style="flex: 1; min-width: 300px; text-align: justify;">
+                <p>Muito prazer! Somos a <strong>InfoFC - Núcleo de Aprendizagem</strong>, uma iniciativa nascida aqui mesmo na região de Cássia/MG.</p>
+                
+                <p>Este material é fruto da união de duas expertises:</p>
+                
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 15px;">
+                        👨🏻‍💻 <strong>Felipe (InfoFC):</strong> Especialista em Tecnologia e Informática, responsável por descomplicar os temas técnicos que as bancas adoram cobrar, como Windows 11 e Segurança da Informação.
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        👩🏻‍🏫 <strong>[NOME DA ESPOSA]:</strong> Especialista em Educação, que estruturou toda a parte pedagógica e os conhecimentos específicos para garantir que você estude exatamente o que cai na prova de Professor.
+                    </li>
+                </ul>
+
+                <p>Nosso objetivo não é ser apenas um "site de apostilas", mas oferecer uma <strong>mentoria real</strong> para quem quer ver seu nome no Diário Oficial.</p>
+            </div>
+        </div>
+    </div>
+    </section>
 
     <footer>
         <p><strong>Núcleo de Aprendizagem InfoFC</strong></p>
@@ -267,6 +315,7 @@
 
 </body>
 </html>
+
 
 
 
