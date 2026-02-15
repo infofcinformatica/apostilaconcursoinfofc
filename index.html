@@ -185,6 +185,44 @@
             50% { transform: translateY(-15px); } /* Sobe um pouquinho */
             100% { transform: translateY(0px); }
         }
+        .floating-logo {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000; /* Fica acima de tudo */
+            width: 65px;   /* Tamanho visual na tela */
+            height: 65px;
+            background: white;
+            border-radius: 50%; /* Deixa redondinho */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Sombra para destacar */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 2px solid #e2e8f0; /* Borda fina para acabamento */
+        }
+        
+        .floating-logo img {
+            width: 90%; /* Ocupa 90% da bolinha */
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .floating-logo:hover {
+            transform: scale(1.1) rotate(5deg); /* Efeito de "zoom" ao passar o mouse */
+            cursor: pointer;
+        }
+        
+        /* Ajuste para não atrapalhar no Celular */
+        @media (max-width: 600px) {
+            .floating-logo {
+                width: 55px;
+                height: 55px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -253,19 +291,20 @@
             
             <div class="profile-card">
                 <img src="foto-felipe.jpg" alt="Felipe InfoFC" class="profile-photo">
-                <h3>Felipe (InfoFC)</h3>
+                <h3>Felipe Eduardo Faleiros Chagas</h3>
                 <span class="profile-role">Tecnologia & Informática</span>
                 <p style="font-size: 0.95em; color: #475569;">
-                    Especialista em descomplicar a tecnologia. Responsável pelos módulos de Windows 11, Segurança da Informação e pelas estratégias técnicas para gabaritar a parte de informática da banca.
+                    Tecnólogo em ADS e Técnico em Hardware e Redes. Especialista em descomplicar a tecnologia na InfoFC. Une o conhecimento acadêmico com a prática diária da assistência técnica para garantir um ensino sem enrolação.
                 </p>
             </div>
 
             <div class="profile-card">
                 <img src="foto-esposa.jpg" alt="Professora [Nome]" class="profile-photo">
-                <h3>Profª [NOME DELA]</h3>
+                <h3>Cíntia Faleiros Silva Chagas</h3>
                 <span class="profile-role">Pedagogia & Legislação</span>
                 <p style="font-size: 0.95em; color: #475569;">
-                    Especialista em Educação Básica. Desenvolveu todo o conteúdo pedagógico focado estritamente no edital de Capetinga, garantindo que você estude apenas o que realmente cai.
+                    <strong>Professora Titular</strong> à frente do <strong>Núcleo de Aprendizagem InfoFC</strong>. <br><br>
+                    Pedagoga pós-graduada em Neuropsicopedagogia. <strong>Especialista em passar em concursos:</strong> já foi aprovada e atuou como Professora (Cássia e Franca) e Secretária Escolar. Atualmente, exerce o cargo de Coordenadora do Criança Feliz, conquistado em seu mais recente concurso. Ela ensina o caminho exato que trilhou para a aprovação.
                 </p>
             </div>
 
@@ -380,9 +419,12 @@
         document.getElementById('sales-toast').classList.remove('show');
     }
 </script>
-
+<a href="https://wa.me/5535999012019" class="floating-logo" title="InfoFC - Núcleo de Aprendizagem">
+    <img src="img/logo.png" alt="Logo InfoFC">
+</a>
 </body>
 </html>
+
 
 
 
