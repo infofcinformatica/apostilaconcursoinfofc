@@ -187,20 +187,23 @@
         }
         .floating-logo {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 1000; /* Fica acima de tudo */
-            width: 65px;   /* Tamanho visual na tela */
-            height: 65px;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            
+            /* AUMENTADO DE 65px PARA 100px */
+            width: 100px;
+            height: 100px;
+            
             background: white;
-            border-radius: 50%; /* Deixa redondinho */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Sombra para destacar */
+            border-radius: 50%; /* Se cortar o texto, apague esta linha! */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             transition: transform 0.3s ease;
-            border: 2px solid #e2e8f0; /* Borda fina para acabamento */
+            border: 3px solid #e2e8f0;
         }
         
         .floating-logo img {
@@ -214,13 +217,12 @@
             cursor: pointer;
         }
         
-        /* Ajuste para não atrapalhar no Celular */
         @media (max-width: 600px) {
             .floating-logo {
-                width: 55px;
-                height: 55px;
-                bottom: 15px;
-                right: 15px;
+                width: 80px; /* Aumentado de 55px para 80px */
+                height: 80px;
+                bottom: 20px;
+                right: 20px;
             }
         }
     </style>
@@ -426,6 +428,7 @@
 </a>
 </body>
 </html>
+
 
 
 
