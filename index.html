@@ -24,6 +24,14 @@
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); /* Uma sombra suave para destacar do fundo */
         }
         
+        .header-flex {
+            display: flex;
+            align-items: center; /* Centraliza verticalmente */
+            justify-content: space-between;
+            gap: 40px;
+            text-align: left; /* Alinha texto à esquerda no PC */
+        }
+        
         /* Pricing Section */
         .pricing-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 50px 0; }
         
@@ -107,10 +115,15 @@
         .toast-close:hover { color: white; }
 
         /* Responsivo para celular */
-        @media (max-width: 600px) {
-            .sales-toast {
-                width: 90%;
-                max-width: none;
+        @media (max-width: 768px) {
+            .header-flex {
+                flex-direction: column-reverse; /* No celular, texto fica em cima, imagem embaixo */
+                text-align: center;
+            }
+            
+            .hero-mockup {
+                max-width: 280px; /* Menor no celular */
+                margin-bottom: 20px;
             }
         }
         
@@ -120,11 +133,51 @@
         }
         
         .hero-mockup {
-            max-width: 100%;
-            width: 320px; /* Tamanho ideal para não ocupar a tela toda */
-            height: auto;
-            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3)); /* Sombra forte para destacar do fundo */
+            width: 100%;
+            max-width: 450px; /* Um pouco maior agora que tem espaço */
             animation: flutuar 3s ease-in-out infinite;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo */
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .profile-card {
+            background: white;
+            border: 2px solid #e2e8f0; /* Mesma borda dos preços */
+            border-radius: 15px;       /* Mesmo arredondamento */
+            padding: 30px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+        
+        .profile-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary); /* Fica verde ao passar o mouse */
+        }
+        
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* Foto redonda */
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            margin-bottom: 15px;
+            padding: 3px;
+            background: white;
+        }
+        
+        .profile-role {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
         }
         
         @keyframes flutuar {
@@ -138,14 +191,26 @@
 
 <header>
     <div class="container">
-        <span class="badge">Material Atualizado 2026</span>
-        <h1>Aprovação no Concurso Prefeitura de Capetinga/MG</h1>
-        <img src="img/capetinga.png" alt="Brasão Prefeitura Capetinga" class="header-logo">
-        <p style="font-size: 1.2em;">Cargo: <strong>Professor de Educação Básica</strong></p>
-        <div class="mockup-container">
-            <img src="img/mockup-apostila.png" alt="Apostila Digital no Tablet" class="hero-mockup">
+        <div class="header-flex">
+            
+            <div class="header-image">
+                 <img src="mockup-apostila.png" alt="Apostila Digital no Tablet" class="hero-mockup">
+            </div>
+
+            <div class="header-text">
+                <span class="badge">Material Atualizado 2026</span>
+                
+                <br>
+                <img src="logo-prefeitura.png" alt="Brasão Prefeitura" class="header-logo" style="width: 200px; margin: 15px 0;">
+
+                <h1 style="font-size: 2.2em;">Aprovação no Concurso Prefeitura de Capetinga/MG</h1>
+                <p style="font-size: 1.3em; margin-bottom: 10px;">Cargo: <strong>Professor de Educação Básica</strong></p>
+                <p>Teoria focada no edital + Questões Comentadas + Mentoria Exclusiva.</p>
+                
+                <a href="#precos" class="cta-button" style="background: var(--accent); color: black; display: inline-block; width: auto;">VER PREÇOS E PLANOS</a>
+            </div>
+
         </div>
-        <p>Teoria focada no edital + Questões Comentadas</p>
     </div>
 </header>
 
@@ -178,29 +243,32 @@
             <a href="SEU_LINK_HOTMART_DE_390_REAIS" class="cta-button">GARANTIR MINHA VAGA AGORA</a>
         </div>
     </div>
-
-    <section style="background: white; padding: 60px 20px; margin-top: 50px;">
-    <div class="container" style="max-width: 800px;">
-        <h2 style="text-align: center; color: var(--primary);">Quem preparou este material?</h2>
         
-        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 30px; margin-top: 40px;">
+    <section style="background: #f8fafc; padding: 60px 20px; margin-top: 50px;">
+    <div class="container">
+        <h2 style="text-align: center; color: var(--primary); margin-bottom: 10px;">Quem preparou este material?</h2>
+        <p style="text-align: center; color: #64748b;">A união da Tecnologia com a Pedagogia para a sua aprovação.</p>
+        
+        <div class="profile-grid">
             
-            <div style="flex: 1; min-width: 300px; text-align: justify;">
-                <p>Muito prazer! Somos a <strong>InfoFC - Núcleo de Aprendizagem</strong>, uma iniciativa nascida aqui mesmo na região de Cássia/MG.</p>
-                
-                <p>Este material é fruto da união de duas expertises:</p>
-                
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 15px;">
-                        👨🏻‍💻 <strong>Felipe (InfoFC):</strong> Especialista em Tecnologia e Informática, responsável por descomplicar os temas técnicos que as bancas adoram cobrar, como Windows 11 e Segurança da Informação.
-                    </li>
-                    <li style="margin-bottom: 15px;">
-                        👩🏻‍🏫 <strong>[NOME DA ESPOSA]:</strong> Especialista em Educação, que estruturou toda a parte pedagógica e os conhecimentos específicos para garantir que você estude exatamente o que cai na prova de Professor.
-                    </li>
-                </ul>
-
-                <p>Nosso objetivo não é ser apenas um "site de apostilas", mas oferecer uma <strong>mentoria real</strong> para quem quer ver seu nome no Diário Oficial.</p>
+            <div class="profile-card">
+                <img src="foto-felipe.jpg" alt="Felipe InfoFC" class="profile-photo">
+                <h3>Felipe (InfoFC)</h3>
+                <span class="profile-role">Tecnologia & Informática</span>
+                <p style="font-size: 0.95em; color: #475569;">
+                    Especialista em descomplicar a tecnologia. Responsável pelos módulos de Windows 11, Segurança da Informação e pelas estratégias técnicas para gabaritar a parte de informática da banca.
+                </p>
             </div>
+
+            <div class="profile-card">
+                <img src="foto-esposa.jpg" alt="Professora [Nome]" class="profile-photo">
+                <h3>Profª [NOME DELA]</h3>
+                <span class="profile-role">Pedagogia & Legislação</span>
+                <p style="font-size: 0.95em; color: #475569;">
+                    Especialista em Educação Básica. Desenvolveu todo o conteúdo pedagógico focado estritamente no edital de Capetinga, garantindo que você estude apenas o que realmente cai.
+                </p>
+            </div>
+
         </div>
     </div>
     </section>
@@ -315,6 +383,7 @@
 
 </body>
 </html>
+
 
 
 
