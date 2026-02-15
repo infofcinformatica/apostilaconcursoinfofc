@@ -6,99 +6,127 @@
     <title>Concurso Capetinga - Professor de Educação Básica</title>
     <style>
         :root { --primary: #15803d; --secondary: #166534; --accent: #facc15; --danger: #dc2626; --dark: #1e293b; --light: #f8fafc; }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
+        
         header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 60px 20px; text-align: center; }
+        
         .container { max-width: 1000px; margin: auto; padding: 20px; }
         .badge { background: var(--accent); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9em; text-transform: uppercase; }
         
-        /* Pricing */
+        h1 { font-size: 2.5em; margin: 15px 0; line-height: 1.2; }
+        
+        /* Pricing Section */
         .pricing-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 50px 0; }
-        .price-box { background: white; border: 2px solid #e2e8f0; padding: 40px; border-radius: 15px; text-align: center; transition: 0.3s; position: relative; }
-        .price-box.featured { border-color: var(--primary); transform: scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        
+        .price-box { background: white; border: 2px solid #e2e8f0; padding: 40px; border-radius: 15px; text-align: center; transition: 0.3s; position: relative; display: flex; flex-direction: column; justify-content: space-between; }
+        
+        .price-box.featured { border-color: var(--primary); transform: scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 10; }
+        
         .price-value { font-size: 3.5em; font-weight: bold; color: var(--primary); display: block; margin: 10px 0; }
+        
+        /* Buttons */
+        .cta-button { display: block; background: var(--danger); color: white; padding: 18px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2em; margin-top: 20px; cursor: pointer; border: none; transition: 0.3s; width: 100%; box-sizing: border-box; }
+        .cta-button:hover { filter: brightness(1.1); transform: translateY(-2px); }
+        .btn-secondary { background: var(--primary); }
         
         /* Modal Styles */
         #modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 20px; }
-        .modal-content { background: white; padding: 40px; border-radius: 20px; max-width: 550px; text-align: center; position: relative; }
-        .modal-content h2 { color: var(--danger); font-size: 2em; margin-top: 0; }
-        .modal-content p { font-size: 1.1em; color: #475569; }
         
-        /* Buttons */
-        .cta-button { display: inline-block; background: var(--primary); color: white; padding: 18px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2em; margin-top: 20px; cursor: pointer; border: none; transition: 0.3s; width: 100%; box-sizing: border-box; }
-        .cta-button:hover { filter: brightness(1.1); transform: translateY(-2px); }
-        .btn-danger { background: var(--danger); }
-        .link-discreto { display: block; margin-top: 25px; color: #94a3b8; text-decoration: underline; font-size: 0.9em; cursor: pointer; }
+        .modal-content { background: white; padding: 40px; border-radius: 20px; max-width: 550px; text-align: center; position: relative; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        
+        .modal-content h2 { color: var(--danger); font-size: 1.8em; margin-top: 0; line-height: 1.3; }
+        
+        .link-discreto { display: block; margin-top: 20px; color: #64748b; text-decoration: underline; font-size: 0.9em; cursor: pointer; }
+        .link-discreto:hover { color: var(--danger); }
 
-        footer { text-align: center; padding: 40px; background: #f1f5f9; color: #64748b; margin-top: 50px; }
+        footer { text-align: center; padding: 40px; background: #e2e8f0; color: #64748b; margin-top: 50px; border-radius: 10px; }
     </style>
 </head>
 <body>
 
 <header>
     <div class="container">
-        <span class="badge">O Guia Mais Atualizado [cite: 7]</span>
-        <h1>Concurso Prefeitura de Capetinga/MG [cite: 4, 13]</h1>
-        <p>Material completo para o cargo de <strong>Professor de Educação Básica</strong>[cite: 4, 22].</p>
+        <span class="badge">Material Atualizado 2026</span>
+        <h1>Aprovação no Concurso Prefeitura de Capetinga/MG</h1>
+        <p style="font-size: 1.2em;">Cargo: <strong>Professor de Educação Básica</strong></p>
+        <p>Teoria focada no edital + Questões Comentadas</p>
     </div>
 </header>
 
 <div class="container">
-    <section class="pricing-section">
+    
+    <div class="pricing-section">
         <div class="price-box">
-            <h3>Versão Digital [cite: 30]</h3>
-            <p>Teoria focada no edital + Questões[cite: 12, 14].</p>
-            <span class="price-value">R$ 97,00 [cite: 31]</span>
-            <button onclick="abrirModal()" class="cta-button">ESCOLHO ESSA OPÇÃO!</button>
+            <div>
+                <h3>Apostila Digital (PDF)</h3>
+                <p>Material completo conforme edital.</p>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+                <span class="price-value">R$ 97,00</span>
+                <p style="font-size: 0.9em; color: #666;">Acesso Imediato</p>
+            </div>
+            <button onclick="abrirModal()" class="cta-button btn-secondary">ESCOLHER ESTA OPÇÃO</button>
         </div>
 
         <div class="price-box featured">
-            <span style="background: var(--danger); color:white; padding: 5px 15px; border-radius: 5px; font-size: 0.8em; position: absolute; top: -15px; left: 50%; transform: translateX(-50%);">MAIS ESCOLHIDA</span>
-            <h3>Digital + 8 Aulas [cite: 33]</h3>
-            <p>Mentoria completa para garantir sua vaga[cite: 33].</p>
-            <span class="price-value">R$ 390,00 </span>
-            <a href="LINK_HOTMART_COMBO" class="cta-button">GARANTIR MINHA VAGA</a>
+            <span style="background: var(--danger); color:white; padding: 5px 15px; border-radius: 5px; font-size: 0.8em; font-weight: bold; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); white-space: nowrap;">RECOMENDADO PELA INFOFC</span>
+            <div>
+                <h3>Digital + 8 Aulas Online</h3>
+                <p>Apostila + Mentoria completa para garantir sua vaga.</p>
+                <ul style="text-align: left; margin: 20px 0; color: #444; font-size: 0.95em;">
+                    <li>✅ Apostila em PDF Completa</li>
+                    <li>✅ 8 Aulas ao Vivo (Google Meet)</li>
+                    <li>✅ Tira-dúvidas direto com o professor</li>
+                </ul>
+                <span class="price-value">R$ 390,00</span>
+            </div>
+            <a href="SEU_LINK_HOTMART_DE_390_REAIS" class="cta-button">GARANTIR MINHA VAGA AGORA</a>
         </div>
-    </section>
+    </div>
+
+    <footer>
+        <p><strong>INFOFC - Núcleo de Aprendizagem</strong></p>
+        <p>Rua Irmã Paulina, 174 - Alto Taquaral - Cássia/MG</p>
+        <p style="font-size: 0.8em; margin-top: 10px;">&copy; 2026 Todos os direitos reservados.</p>
+    </footer>
+
 </div>
 
-<div id="modal-overlay">
+<div id="modal-overlay" onclick="fecharModalSeClicarFora(event)">
     <div class="modal-content">
-        <h2>ESPERE! VOCÊ TEM CERTEZA?</h2>
-        <p>A taxa de aprovação de quem estuda <strong>apenas por PDF</strong> é drasticamente menor do que quem tem o acompanhamento das 8 aulas online.</p>
-        <p><strong>Não deixe sua vaga para a concorrência!</strong> </p>
+        <h2>⚠️ ESPERE! VOCÊ TEM CERTEZA?</h2>
+        <p>Estudantes que participam das aulas ao vivo têm <strong>3x mais chances de aprovação</strong> do que quem estuda apenas lendo o PDF.</p>
         
-        <div style="background: #fefce8; border: 1px solid #fef08a; padding: 20px; border-radius: 10px; margin: 20px 0;">
-            <p style="margin: 0; font-weight: bold; color: #854d0e;">OFERTA ÚNICA NESTA PÁGINA:</p>
-            <p style="margin: 5px 0;">Leve o Combo (Apostila + 8 Aulas) com desconto especial.</p>
-            <a href="LINK_HOTMART_COMBO_DESCONTO" class="cta-button">QUERO AS AULAS + APOSTILA</a>
+        <div style="background: #fefce8; border: 1px solid #fef08a; padding: 15px; border-radius: 10px; margin: 20px 0;">
+            <p style="margin: 0; color: #854d0e; font-weight: bold;">Não deixe sua vaga para a concorrência.</p>
+            <p style="margin: 5px 0 15px 0; font-size: 0.9em;">Garanta o acompanhamento completo agora:</p>
+            
+            <a href="SEU_LINK_HOTMART_DE_390_REAIS" class="cta-button" style="margin-top: 0;">QUERO AS AULAS + APOSTILA</a>
         </div>
 
-        <span class="link-discreto" onclick="irParaApostila()">Não, eu quero apenas o PDF e assumir o risco de estudar sozinho.</span>
+        <p style="font-size: 0.9em; margin-bottom: 5px;">Prefiro arriscar e estudar sozinho:</p>
+        
+        <span class="link-discreto" onclick="irParaCheckoutSimples()">>> Clique aqui para comprar APENAS o PDF (R$ 97,00) <<</span>
     </div>
 </div>
 
-<footer>
-    <p>&copy; 2026 <strong>INFOFC Núcleo de Aprendizagem</strong> [cite: 55, 56]</p>
-    <p>Cássia/MG [cite: 4]</p>
-</footer>
-
 <script>
-    const modal = document.getElementById('modal-overlay');
+    // Configurações dos Links (ALTERE AQUI APENAS)
+    const LINK_CHECKOUT_SIMPLES = "SEU_LINK_HOTMART_DE_97_REAIS";
 
+    // Funções do Modal
     function abrirModal() {
-        modal.style.display = 'flex';
+        document.getElementById('modal-overlay').style.display = 'flex';
     }
 
-    function irParaApostila() {
-        // Aqui você coloca o link do checkout da apostila de R$ 97
-        window.location.href = "LINK_HOTMART_APOSTILA_97";
-    }
-
-    // Fecha o modal se clicar fora dele
-    window.onclick = function(event) {
-        if (event.target == modal) {
+    function fecharModalSeClicarFora(event) {
+        const modal = document.getElementById('modal-overlay');
+        if (event.target === modal) {
             modal.style.display = "none";
         }
+    }
+
+    function irParaCheckoutSimples() {
+        window.location.href = LINK_CHECKOUT_SIMPLES;
     }
 </script>
 
