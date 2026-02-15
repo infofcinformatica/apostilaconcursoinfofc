@@ -40,6 +40,72 @@
         .link-discreto:hover { color: var(--danger); }
 
         footer { text-align: center; padding: 40px; background: #e2e8f0; color: #64748b; margin-top: 50px; border-radius: 10px; }
+
+        /* NOTIFICAÇÃO DE VENDAS (CSS NOVO) */
+        .sales-toast {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #0f172a; /* Azul Escuro */
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            max-width: 350px;
+            
+            /* Animação */
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none; /* Não clicável enquanto invisível */
+        }
+
+        .sales-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        .toast-icon {
+            font-size: 1.5em;
+            background: #1e293b;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid #334155;
+        }
+
+        .toast-content p { margin: 0; font-size: 0.9em; line-height: 1.4; }
+        .toast-title { font-weight: bold; color: #fff; }
+        .toast-subtitle { color: #94a3b8; font-size: 0.8em !important; }
+
+        .toast-close {
+            background: none;
+            border: none;
+            color: #64748b;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 0 0 0 10px;
+            line-height: 1;
+        }
+        .toast-close:hover { color: white; }
+
+        /* Responsivo para celular */
+        @media (max-width: 600px) {
+            .sales-toast {
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+                max-width: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -84,9 +150,9 @@
     </div>
 
     <footer>
-        <p><strong>Núcleo de aprendizagem InfoFC</strong></p>
+        <p><strong>Núcleo de Aprendizagem InfoFC</strong></p>
         <p>Rua Irmã Paulina, 174 - Alto Taquaral - Cássia/MG</p>
-        <p style="font-size: 0.8em; margin-top: 10px;">&copy; 2026 Todos os direitos reservados. InfoFC Informática</p>
+        <p style="font-size: 0.8em; margin-top: 10px;">&copy; 2026 Todos os direitos reservados.</p>
     </footer>
 
 </div>
@@ -109,11 +175,20 @@
     </div>
 </div>
 
+<div id="sales-toast" class="sales-toast">
+    <div class="toast-icon">🔥</div>
+    <div class="toast-content">
+        <p class="toast-title"><span id="sales-count">24</span> pessoas compraram nas últimas 24h</p>
+        <p class="toast-subtitle">Envio digital em até 24h após pagamento.</p>
+    </div>
+    <button class="toast-close" onclick="fecharToast()">×</button>
+</div>
+
 <script>
     // Configurações dos Links (ALTERE AQUI APENAS)
     const LINK_CHECKOUT_SIMPLES = "SEU_LINK_HOTMART_DE_97_REAIS";
 
-    // Funções do Modal
+    // --- LÓGICA DO MODAL ---
     function abrirModal() {
         document.getElementById('modal-overlay').style.display = 'flex';
     }
@@ -128,9 +203,33 @@
     function irParaCheckoutSimples() {
         window.location.href = LINK_CHECKOUT_SIMPLES;
     }
+
+    // --- LÓGICA DA NOTIFICAÇÃO DE VENDAS ---
+    
+    // 1. Função para gerar número aleatório entre min e max
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // 2. Configura a notificação
+    document.addEventListener("DOMContentLoaded", function() {
+        // Define o número aleatório entre 15 e 35
+        const numeroVendas = getRandomInt(15, 35);
+        document.getElementById('sales-count').innerText = numeroVendas;
+
+        // Mostra a notificação após 4 segundos (4000ms)
+        setTimeout(function() {
+            document.getElementById('sales-toast').classList.add('show');
+        }, 4000);
+    });
+
+    // 3. Função para fechar a notificação
+    function fecharToast() {
+        document.getElementById('sales-toast').classList.remove('show');
+    }
 </script>
 
 </body>
 </html>
-
-
