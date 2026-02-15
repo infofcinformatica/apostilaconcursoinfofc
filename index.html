@@ -211,10 +211,36 @@
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    // 2. Configura a notificação
+// 2. Configura a notificação (Com memória de 24h)
     document.addEventListener("DOMContentLoaded", function() {
-        // Define o número aleatório entre 15 e 35
-        const numeroVendas = getRandomInt(15, 35);
+        const KEY_STORAGE = 'infofc_sales_number'; // Nome da "gaveta" na memória
+        const TEMPO_EXPIRACAO = 24 * 60 * 60 * 1000; // 24 horas em milissegundos
+        const agora = new Date().getTime();
+
+        let numeroVendas;
+        
+        // Tenta pegar o dado salvo
+        const dadoSalvo = localStorage.getItem(KEY_STORAGE);
+
+        if (dadoSalvo) {
+            const objeto = JSON.parse(dadoSalvo);
+            // Verifica se o dado é recente (menos de 24h)
+            if (agora - objeto.timestamp < TEMPO_EXPIRACAO) {
+                numeroVendas = objeto.value; // Usa o número antigo
+            }
+        }
+
+        // Se não tiver dado salvo ou se já expirou (passou 24h), gera um novo
+        if (!numeroVendas) {
+            numeroVendas = getRandomInt(15, 35);
+            // Salva o novo número e a hora atual
+            localStorage.setItem(KEY_STORAGE, JSON.stringify({
+                value: numeroVendas,
+                timestamp: agora
+            }));
+        }
+
+        // Atualiza o texto na tela
         document.getElementById('sales-count').innerText = numeroVendas;
 
         // Mostra a notificação após 4 segundos (4000ms)
@@ -231,4 +257,5 @@
 
 </body>
 </html>
+
 
