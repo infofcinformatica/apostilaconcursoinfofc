@@ -3,71 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informática para Concursos - InfoFC</title>
+    <title>Concurso Capetinga - Professor de Educação Básica</title>
     <style>
-        :root { --primary: #2563eb; --secondary: #1e40af; --dark: #1e293b; --light: #f8fafc; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
+        :root { --primary: #15803d; --secondary: #166534; --accent: #facc15; --danger: #dc2626; --dark: #1e293b; --light: #f8fafc; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
         header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 60px 20px; text-align: center; }
-        .container { max-width: 900px; margin: auto; padding: 20px; }
-        .badge { background: #fbbf24; color: #000; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9em; }
-        h1 { font-size: 2.5em; margin: 10px 0; }
-        .cta-button { display: inline-block; background: #22c55e; color: white; padding: 18px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2em; margin-top: 20px; transition: 0.3s; box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4); }
-        .cta-button:hover { background: #16a34a; transform: scale(1.05); }
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 40px 0; }
-        .feature-card { background: white; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; text-align: center; }
-        .price-box { background: white; border: 2px solid var(--primary); padding: 40px; border-radius: 15px; text-align: center; margin: 40px 0; }
-        .price-old { text-decoration: line-through; color: #94a3b8; font-size: 1.1em; }
-        .price-new { font-size: 3em; font-weight: bold; color: var(--primary); display: block; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .badge { background: var(--accent); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9em; text-transform: uppercase; }
+        
+        /* Pricing */
+        .pricing-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 50px 0; }
+        .price-box { background: white; border: 2px solid #e2e8f0; padding: 40px; border-radius: 15px; text-align: center; transition: 0.3s; position: relative; }
+        .price-box.featured { border-color: var(--primary); transform: scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .price-value { font-size: 3.5em; font-weight: bold; color: var(--primary); display: block; margin: 10px 0; }
+        
+        /* Modal Styles */
+        #modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 20px; }
+        .modal-content { background: white; padding: 40px; border-radius: 20px; max-width: 550px; text-align: center; position: relative; }
+        .modal-content h2 { color: var(--danger); font-size: 2em; margin-top: 0; }
+        .modal-content p { font-size: 1.1em; color: #475569; }
+        
+        /* Buttons */
+        .cta-button { display: inline-block; background: var(--primary); color: white; padding: 18px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2em; margin-top: 20px; cursor: pointer; border: none; transition: 0.3s; width: 100%; box-sizing: border-box; }
+        .cta-button:hover { filter: brightness(1.1); transform: translateY(-2px); }
+        .btn-danger { background: var(--danger); }
+        .link-discreto { display: block; margin-top: 25px; color: #94a3b8; text-decoration: underline; font-size: 0.9em; cursor: pointer; }
+
+        footer { text-align: center; padding: 40px; background: #f1f5f9; color: #64748b; margin-top: 50px; }
     </style>
 </head>
 <body>
 
 <header>
     <div class="container">
-        <span class="badge">CONCURSO 2026: PREPARAÇÃO COMPLETA</span>
-        <h1>Domine a Informática e Garanta sua Vaga</h1>
-        <p>Apostila em PDF + Ciclo de Mentorias ao Vivo via Google Meet. Do Windows 11 à Segurança da Informação.</p>
-        <a href="SEU_LINK_DO_HOTMART" class="cta-button">QUERO MINHA VAGA AGORA</a>
+        <span class="badge">O Guia Mais Atualizado [cite: 7]</span>
+        <h1>Concurso Prefeitura de Capetinga/MG [cite: 4, 13]</h1>
+        <p>Material completo para o cargo de <strong>Professor de Educação Básica</strong>[cite: 4, 22].</p>
     </div>
 </header>
 
 <div class="container">
-    <section>
-        <h2 style="text-align: center;">O que você vai aprender para gabaritar:</h2>
-        <div class="features">
-            <div class="feature-card">
-                <h3>Windows 11 e Office</h3>
-                <p>Tudo sobre o novo sistema e as ferramentas Word/Excel que as bancas amam cobrar.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Google Workspace</h3>
-                <p>Domine o Google Docs, Planilhas e Drive para não cair em pegadinhas de ferramentas online.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Segurança Total</h3>
-                <p>Proteção contra malwares, golpes, spam e procedimentos de segurança em redes e móveis.</p>
-            </div>
+    <section class="pricing-section">
+        <div class="price-box">
+            <h3>Versão Digital [cite: 30]</h3>
+            <p>Teoria focada no edital + Questões[cite: 12, 14].</p>
+            <span class="price-value">R$ 97,00 [cite: 31]</span>
+            <button onclick="abrirModal()" class="cta-button">ESCOLHO ESSA OPÇÃO!</button>
+        </div>
+
+        <div class="price-box featured">
+            <span style="background: var(--danger); color:white; padding: 5px 15px; border-radius: 5px; font-size: 0.8em; position: absolute; top: -15px; left: 50%; transform: translateX(-50%);">MAIS ESCOLHIDA</span>
+            <h3>Digital + 8 Aulas [cite: 33]</h3>
+            <p>Mentoria completa para garantir sua vaga[cite: 33].</p>
+            <span class="price-value">R$ 390,00 </span>
+            <a href="LINK_HOTMART_COMBO" class="cta-button">GARANTIR MINHA VAGA</a>
         </div>
     </section>
+</div>
 
-    <section style="background: #e2e8f0; padding: 30px; border-radius: 12px;">
-        <h2 style="margin-top: 0;">🚀 O Grande Diferencial: Mentorias ao Vivo</h2>
-        <p>Não é apenas ler um PDF. Você terá acesso a <strong>lives exclusivas</strong> comigo no Google Meet, onde vamos passar módulo por módulo, tirando dúvidas e resolvendo questões de prova na hora.</p>
-    </section>
+<div id="modal-overlay">
+    <div class="modal-content">
+        <h2>ESPERE! VOCÊ TEM CERTEZA?</h2>
+        <p>A taxa de aprovação de quem estuda <strong>apenas por PDF</strong> é drasticamente menor do que quem tem o acompanhamento das 8 aulas online.</p>
+        <p><strong>Não deixe sua vaga para a concorrência!</strong> </p>
+        
+        <div style="background: #fefce8; border: 1px solid #fef08a; padding: 20px; border-radius: 10px; margin: 20px 0;">
+            <p style="margin: 0; font-weight: bold; color: #854d0e;">OFERTA ÚNICA NESTA PÁGINA:</p>
+            <p style="margin: 5px 0;">Leve o Combo (Apostila + 8 Aulas) com desconto especial.</p>
+            <a href="LINK_HOTMART_COMBO_DESCONTO" class="cta-button">QUERO AS AULAS + APOSTILA</a>
+        </div>
 
-    <div class="price-box">
-        <h3>Oferta Especial de Lançamento</h3>
-        <span class="price-old">De R$ 197,00 por apenas</span>
-        <span class="price-new">R$ 97,00</span>
-        <p>ou em até 10x no cartão</p>
-        <a href="SEU_LINK_DO_HOTMART" class="cta-button">GARANTIR MEU ACESSO E BÔNUS</a>
-        <p style="font-size: 0.8em; margin-top: 15px;">Compra 100% Segura via Hotmart | Garantia de 7 dias</p>
+        <span class="link-discreto" onclick="irParaApostila()">Não, eu quero apenas o PDF e assumir o risco de estudar sozinho.</span>
     </div>
 </div>
 
-<footer style="text-align: center; padding: 40px; color: #64748b; font-size: 0.9em;">
-    <p>&copy; 2026 InfoFC Educacional - Cássia/MG. Todos os direitos reservados.</p>
+<footer>
+    <p>&copy; 2026 <strong>INFOFC Núcleo de Aprendizagem</strong> [cite: 55, 56]</p>
+    <p>Cássia/MG [cite: 4]</p>
 </footer>
+
+<script>
+    const modal = document.getElementById('modal-overlay');
+
+    function abrirModal() {
+        modal.style.display = 'flex';
+    }
+
+    function irParaApostila() {
+        // Aqui você coloca o link do checkout da apostila de R$ 97
+        window.location.href = "LINK_HOTMART_APOSTILA_97";
+    }
+
+    // Fecha o modal se clicar fora dele
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>
