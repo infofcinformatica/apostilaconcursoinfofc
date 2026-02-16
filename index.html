@@ -42,7 +42,7 @@
         .price-value { font-size: 3.5em; font-weight: bold; color: var(--primary); display: block; margin: 10px 0; }
         
         /* Buttons */
-        .cta-button { display: block; background: var(--danger); color: white; padding: 18px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2em; margin-top: 20px; cursor: pointer; border: none; transition: 0.3s; width: 100%; box-sizing: border-box; }
+        .cta-button { display: flex; justify-content: center; align-items: center; text-align: center; background: var(--danger); color: white; padding: 18px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2em; margin-top: 20px; cursor: pointer; border: none; transition: 0.3s; width: 100%; box-sizing: border-box; }
         .cta-button:hover { filter: brightness(1.1); transform: translateY(-2px); }
         .btn-secondary { background: var(--primary); }
         
@@ -232,9 +232,10 @@
             border-bottom: 1px solid #e2e8f0;
         }
         
-        .syllabus-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo automático */
+       .syllabus-grid {
+            display: flex;
+            flex-wrap: wrap; /* Permite quebrar linha */
+            justify-content: center; /* Centraliza tudo (inclusive a linha de baixo) */
             gap: 25px;
         }
         
@@ -243,12 +244,17 @@
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--primary); /* Aquele detalhe verde na lateral */
+            border-left: 5px solid var(--primary);
             transition: transform 0.3s ease;
+            
+            /* CONFIGURAÇÃO DE TAMANHO FLEXÍVEL */
+            flex: 1 1 300px; /* Cresce, encolhe, tamanho base de 300px */
+            max-width: 32%;  /* Garante que caibam 3 por linha (com margem) */
+            min-width: 280px; /* Não deixa ficar muito estreito no celular */
         }
         
         .syllabus-card:hover {
-            transform: translateY(-5px); /* Efeito de subir ao passar o mouse */
+            transform: translateY(-5px);
         }
         
         .card-icon {
@@ -276,9 +282,15 @@
         }
         
         /* Ajuste do Card da BNCC no celular */
+        @media (max-width: 900px) {
+            .syllabus-card {
+                max-width: 48%; /* Em tablets, ficam 2 por linha */
+            }
+        }
+        
         @media (max-width: 600px) {
-            .syllabus-card[style*="grid-column"] {
-                grid-column: auto !important; /* No celular, volta a ser um card normal */
+            .syllabus-card {
+                max-width: 100%; /* No celular, 1 por linha */
             }
         }
         /* --- GRUPO DO BOTÃO + SELO --- */
@@ -378,7 +390,7 @@
                 <p>História e concepções. Os eixos estruturantes (Interações e Brincadeira) e o essencial binômio <strong>Educar e Cuidar</strong>.</p>
             </div>
 
-            <div class="syllabus-card" style="grid-column: 1 / -1;"> <div class="card-icon">📚</div>
+            <div class="syllabus-card"> <div class="card-icon">📚</div>
                 <h3>BNCC e Prática de Ensino</h3>
                 <p>Unidades temáticas e habilidades específicas dos <strong>Anos Iniciais</strong>, conectando a teoria à sala de aula.</p>
             </div>
@@ -426,7 +438,7 @@
 
             
             <div class="profile-card">
-                <img src="cintia.png" alt="Professora Cíntia Faleiros Silva Chagas" class="profile-photo">
+                <img src="img/cintia.png" alt="Professora Cíntia Faleiros Silva Chagas" class="profile-photo">
                 <h3>Cíntia Faleiros Silva Chagas</h3>
                 <span class="profile-role">Pedagogia & Legislação</span>
                 <p style="font-size: 0.95em; color: #475569;">
@@ -561,6 +573,7 @@
 </a>
 </body>
 </html>
+
 
 
 
