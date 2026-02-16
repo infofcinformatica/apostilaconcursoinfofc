@@ -225,6 +225,93 @@
                 right: 20px;
             }
         }
+        /* --- ESTILO DO CONTEÚDO PROGRAMÁTICO --- */
+        .syllabus-section {
+            background: #f1f5f9; /* Fundo cinza claro para separar as seções */
+            padding: 60px 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .syllabus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo automático */
+            gap: 25px;
+        }
+        
+        .syllabus-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary); /* Aquele detalhe verde na lateral */
+            transition: transform 0.3s ease;
+        }
+        
+        .syllabus-card:hover {
+            transform: translateY(-5px); /* Efeito de subir ao passar o mouse */
+        }
+        
+        .card-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            background: #ecfdf5; /* Fundo verde bem clarinho pro ícone */
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .syllabus-card h3 {
+            color: var(--secondary);
+            margin: 10px 0;
+            font-size: 1.3em;
+        }
+        
+        .syllabus-card p {
+            color: #475569;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        /* Ajuste do Card da BNCC no celular */
+        @media (max-width: 600px) {
+            .syllabus-card[style*="grid-column"] {
+                grid-column: auto !important; /* No celular, volta a ser um card normal */
+            }
+        }
+        /* --- GRUPO DO BOTÃO + SELO --- */
+        .cta-group {
+            display: flex;
+            align-items: center; /* Centraliza verticalmente */
+            gap: 20px; /* Espaço entre o botão e o selo */
+            margin-top: 20px;
+        }
+        
+        .header-seal {
+            width: 90px;  /* Tamanho visual do selo (ajuste se quiser maior) */
+            height: auto;
+            animation: pulse 2s infinite; /* Uma animaçãozinha para chamar atenção */
+        }
+        
+        /* Animação de "Bater coração" suave para o selo */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Ajuste para Celular: Se a tela for muito estreita, pode quebrar linha ou ajustar */
+        @media (max-width: 480px) {
+            .cta-group {
+                justify-content: center; /* Centraliza tudo no celular */
+            }
+            
+            .header-seal {
+                width: 70px; /* Um pouco menor no celular */
+            }
+        }
     </style>
 </head>
 <body>
@@ -247,12 +334,58 @@
                 <p style="font-size: 1.3em; margin-bottom: 10px;">Cargo: <strong>Professor de Educação Básica</strong></p>
                 <p>Teoria focada no edital + Questões Comentadas + Mentoria Exclusiva.</p>
                 
-                <a href="#precos" class="cta-button" style="background: var(--accent); color: black; display: inline-block; width: auto;">VER PREÇOS E PLANOS</a>
+                <div class="cta-group">
+                    <a href="#precos" class="cta-button">VER PREÇOS E PLANOS</a>
+                    
+                    <img src="selo-qualidade.png" alt="Selo de Qualidade" class="header-seal">
+                </div>
             </div>
 
         </div>
     </div>
 </header>
+
+<section class="syllabus-section">
+    <div class="container">
+        <h2 style="text-align: center; color: var(--secondary); margin-bottom: 10px;">O que você vai dominar?</h2>
+        <p style="text-align: center; color: #64748b; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Material elaborado rigorosamente de acordo com o edital de Capetinga/MG. Sem enrolação, direto ao ponto.
+        </p>
+
+        <div class="syllabus-grid">
+            
+            <div class="syllabus-card">
+                <div class="card-icon">🧠</div>
+                <h3>Teorias & Aprendizagem</h3>
+                <p>Domine <strong>Piaget, Vygotsky e Wallon</strong>. Entenda as tendências pedagógicas e como elas são cobradas na prática escolar.</p>
+            </div>
+
+            <div class="syllabus-card">
+                <div class="card-icon">⚖️</div>
+                <h3>Legislação Completa</h3>
+                <p>CF/88, LDB, ECA e PNE. Destaque exclusivo para o <strong>Decreto Federal nº 11.556/2023</strong> (Compromisso Nacional Criança Alfabetizada).</p>
+            </div>
+
+            <div class="syllabus-card">
+                <div class="card-icon">🏫</div>
+                <h3>Político-Pedagógico</h3>
+                <p>Tudo sobre Função Social da Escola, Gestão Democrática, PPP (Projeto Político-Pedagógico) e Colegiados Escolares.</p>
+            </div>
+
+            <div class="syllabus-card">
+                <div class="card-icon">🧸</div>
+                <h3>Educação Infantil</h3>
+                <p>História e concepções. Os eixos estruturantes (Interações e Brincadeira) e o essencial binômio <strong>Educar e Cuidar</strong>.</p>
+            </div>
+
+            <div class="syllabus-card" style="grid-column: 1 / -1;"> <div class="card-icon">📚</div>
+                <h3>BNCC e Prática de Ensino</h3>
+                <p>Unidades temáticas e habilidades específicas dos <strong>Anos Iniciais</strong>, conectando a teoria à sala de aula.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 <div class="container">
     
@@ -293,17 +426,17 @@
 
             
             <div class="profile-card">
-                <img src="cintia.jpg" alt="Professora Cíntia Faleiros Silva Chagas" class="profile-photo">
+                <img src="cintia.png" alt="Professora Cíntia Faleiros Silva Chagas" class="profile-photo">
                 <h3>Cíntia Faleiros Silva Chagas</h3>
                 <span class="profile-role">Pedagogia & Legislação</span>
                 <p style="font-size: 0.95em; color: #475569;">
                     <strong>Professora Titular</strong> à frente do <strong>Núcleo de Aprendizagem InfoFC</strong>. <br><br>
-                    Pedagoga pós-graduada em Neuropsicopedagogia. <strong>Especialista em passar em concursos:</strong> já foi aprovada e atuou como Professora (Cássia e Franca) e Secretária Escolar. Atualmente, exerce o cargo de Coordenadora do Criança Feliz, conquistado em seu mais recente concurso. Ela ensina o caminho exato que trilhou para a aprovação.
+                    Pedagoga pós-graduada em Neuropsicopedagogia Clínica e Institucional, e em Planejamento, Implementação e Gestão em EAD. Com a experiência de quem já foi aprovada em <strong>3 concursos</strong>, atuou como Professora e Secretária Escolar. Atualmente é Coordenadora do Programa Criança Feliz em Cássia/MG, cargo conquistado em seu mais recente concurso. Hoje, ela ensina o caminho exato que trilhou para a aprovação.
                 </p>
             </div>
             
             <div class="profile-card">
-                <img src="felipe.jpg" alt="Felipe Eduardo Faleiros Chagas" class="profile-photo">
+                <img src="felipe.png" alt="Felipe Eduardo Faleiros Chagas" class="profile-photo">
                 <h3>Felipe Eduardo Faleiros Chagas</h3>
                 <span class="profile-role">Tecnologia & Informática</span>
                 <p style="font-size: 0.95em; color: #475569;">
@@ -428,6 +561,7 @@
 </a>
 </body>
 </html>
+
 
 
 
