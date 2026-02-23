@@ -452,7 +452,7 @@
                 <span class="price-value">12x R$ 40,33</span>
                 <p style="font-size: 0.9em; color: #666;">Ou R$ 390,00 à vista</p>
             </div>
-            <a href="https://pay.hotmart.com/U104474936X?off=8ooaioi2" class="cta-button">GARANTIR MINHA VAGA AGORA</a>
+            <a href="https://pay.hotmart.com/U104474936X?off=8ooaioi2" onclick="fbq('track', 'InitiateCheckout', {content_name: 'Combo Capetinga', value: 390.00, currency: 'BRL'});" class="cta-button">GARANTIR MINHA VAGA AGORA</a>
         </div>
     </div>
         
@@ -505,12 +505,12 @@
             <p style="margin: 0; color: #854d0e; font-weight: bold;">Não deixe sua vaga para a concorrência.</p>
             <p style="margin: 5px 0 15px 0; font-size: 0.9em;">Garanta o acompanhamento completo agora:</p>
             
-            <a href="https://pay.hotmart.com/U104474936X?off=8ooaioi2" class="cta-button" style="margin-top: 0;">QUERO AS AULAS + APOSTILA + BÔNUS!</a>
+            <a href="https://pay.hotmart.com/U104474936X?off=8ooaioi2" onclick="fbq('track', 'InitiateCheckout', {content_name: 'Combo Capetinga', value: 390.00, currency: 'BRL'});" class="cta-button" style="margin-top: 0;">QUERO AS AULAS + APOSTILA + BÔNUS!</a>
         </div>
 
         <p style="font-size: 0.9em; margin-bottom: 5px;">Prefiro arriscar e estudar sozinho:</p>
         
-        <span class="link-discreto" onclick="irParaCheckoutSimples()">>> Clique aqui para comprar APENAS o PDF (R$ 97,00) <<</span>
+        <span class="link-discreto" onclick="fbq('track', 'InitiateCheckout', {content_name: 'Apostila PDF Capetinga', value: 97.00, currency: 'BRL'}); irParaCheckoutSimples()"> >> Clique aqui para comprar APENAS o PDF (R$ 97,00) << </span>
     </div>
 </div>
 
@@ -600,6 +600,7 @@
 </a>
 </body>
 </html>
+
 
 
 
