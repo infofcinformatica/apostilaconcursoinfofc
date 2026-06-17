@@ -119,7 +119,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* CAIXAS DE PREÇO */
+        /* CAIXAS DE PREÇO ATUALIZADAS PARA TER IMAGEM DO LADO */
         .pricing-wrapper {
             display: flex;
             justify-content: center;
@@ -129,29 +129,65 @@
             border: 2px solid #e2e8f0; 
             padding: 40px; 
             border-radius: 15px; 
-            text-align: center; 
-            max-width: 450px;
+            text-align: left; /* Alinhamento geral à esquerda */
+            max-width: 800px; /* Aumentado para acomodar imagem e texto */
             width: 100%;
             position: relative; 
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            display: flex; /* Flexbox para colocar lado a lado */
+            align-items: center;
+            gap: 30px;
         }
         .price-box.featured { 
             border-color: var(--accent); 
             box-shadow: 0 15px 35px rgba(245, 158, 11, 0.15); 
         }
+        
+        /* Container da imagem dentro da price-box */
+        .product-image-container {
+            flex: 0 0 250px; /* Não estica, não encolhe, base de 250px */
+            text-align: center;
+        }
+        .product-image-container img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+        }
+
+        /* Container do texto dentro da price-box */
+        .product-details-container {
+            flex: 1; /* Ocupa o resto do espaço */
+        }
+
         .price-value { font-size: 3em; font-weight: bold; color: var(--primary); display: block; margin: 15px 0; line-height: 1;}
         .price-box ul { text-align: left; padding: 0; list-style: none; margin: 20px 0; color: #475569;}
         .price-box li { margin-bottom: 12px; font-size: 0.95em; }
         .bonus-alert { background: #fef2f2; border: 1px dashed #fca5a5; padding: 10px; border-radius: 8px; color: #991b1b; font-size: 0.85em; margin-top: 15px;}
         .bonus-free { background: #ecfccb; border: 1px dashed #bef264; padding: 10px; border-radius: 8px; color: #3f6212; font-size: 0.85em; margin-top: 15px; font-weight: bold;}
 
-        /* CONTEÚDO PROGRAMÁTICO */
-        .syllabus-section { background: #f1f5f9; padding: 60px 20px; border-bottom: 1px solid #e2e8f0; }
-        .syllabus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
-        .syllabus-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border-left: 5px solid var(--accent); transition: transform 0.3s ease; }
-        .syllabus-card:hover { transform: translateY(-5px); }
-        .card-icon { font-size: 2em; margin-bottom: 15px; background: #fffbeb; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
-        .syllabus-card h3 { color: var(--primary); margin: 10px 0; font-size: 1.3em; }
+        /* NOVA SEÇÃO DE VÍDEO (CSS) */
+        .video-section { background: #f1f5f9; padding: 60px 20px; border-bottom: 1px solid #e2e8f0; text-align: center;}
+        
+        /* Wrapper para deixar o embed do YouTube responsivo (proporção 16:9) */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto; /* Centraliza */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            background: #000; /* Fundo preto enquanto carrega */
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
         /* PERFIS */
         .profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
@@ -176,7 +212,24 @@
         /* RESPONSIVIDADE */
         @media (max-width: 768px) {
             .header-flex { flex-direction: column-reverse; text-align: center; }
-            .syllabus-grid { grid-template-columns: 1fr; }
+            
+            /* Ajuste da price-box no celular: empilha imagem e texto */
+            .price-box {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            .product-image-container {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 200px;
+                margin-bottom: 20px;
+            }
+            .price-box ul {
+                text-align: center;
+                display: inline-block;
+            }
+            
             .tabs-nav { flex-direction: column; padding: 0 20px; }
             .tab-btn { width: 100%; text-align: center; }
         }
@@ -189,14 +242,14 @@
         <div class="header-flex">
             
             <div class="header-image">
-                <!-- Coloque a imagem renderizada do material aqui -->
+                <!-- Mantida sua imagem do material -->
                  <img src="img/mockup-geral.png" alt="Apostilas InfoFC Delfinópolis" style="width: 100%; max-width: 400px; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5));">
             </div>
 
             <div class="header-text">
                 <span class="badge">Focado no Edital 01/2026</span>
                 <br>
-                <!-- Insira o brasão de Delfinópolis aqui -->
+                <!-- Mantido o brasão de Delfinópolis -->
                 <img src="img/brasao-delfinopolis.png" alt="Brasão Prefeitura Delfinópolis" class="header-logo">
 
                 <h1>Aprovação no Concurso Prefeitura de Delfinópolis/MG</h1>
@@ -211,39 +264,27 @@
     </div>
 </header>
 
-<section class="syllabus-section">
+<!-- NOVA SEÇÃO DE VÍDEO (SUBSTITUINDO O QUE VOCÊ VAI ENCONTRAR) -->
+<section class="video-section">
     <div class="container">
-        <h2 style="text-align: center; color: var(--primary); margin-bottom: 10px;">O que você vai encontrar?</h2>
-        <p style="text-align: center; color: #64748b; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
-            Estruturamos as apostilas dividindo a teoria de forma inteligente, repletas de quadros de resumo, alertas de pegadinhas da banca e blocos práticos de questões comentadas.
+        <h2 style="color: var(--primary); margin-bottom: 10px;">Conheça nossa Metodologia</h2>
+        <p style="color: #64748b; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+            Assista ao vídeo abaixo e veja como estruturamos nosso material para garantir sua aprovação, direto ao ponto e sem enrolação.
         </p>
 
-        <div class="syllabus-grid">
-            <div class="syllabus-card">
-                <div class="card-icon">🏛️</div>
-                <h3>Legislação Municipal</h3>
-                <p>Domine a Lei Orgânica, o Estatuto dos Servidores, os Princípios da Administração Pública e a Nova Lei de Licitações.</p>
-            </div>
-            <div class="syllabus-card">
-                <div class="card-icon">🌍</div>
-                <h3>Conhecimentos Gerais & Atualidades</h3>
-                <p>História e geografia de Delfinópolis/MG, Geopolítica, Meio Ambiente e a realidade do Cerrado.</p>
-            </div>
-            <div class="syllabus-card">
-                <div class="card-icon">💻</div>
-                <h3>Informática p/ Concursos</h3>
-                <p>Hardware, Software, Windows 10, Word, Excel, PowerPoint e Noções de Segurança da Informação mastigadas.</p>
-            </div>
-            <div class="syllabus-card">
-                <div class="card-icon">📚</div>
-                <h3>Conhecimentos Específicos (Professores)</h3>
-                <p>LDB, ECA, PNE, BNCC, Currículo de Minas Gerais, Piaget, Vygotsky e toda a Legislação Educacional.</p>
+        <div class="video-wrapper">
+            <!-- COLE O CÓDIGO EMBED DO YOUTUBE AQUI -->
+            <!-- Exemplo de como deve ficar: <iframe src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+            
+            <!-- Placeholder visual enquanto você não coloca o vídeo -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #2d3748; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2em;">
+                Insira o código embed do YouTube aqui no HTML
             </div>
         </div>
     </div>
 </section>
 
-<!-- SEÇÃO DE PREÇOS COM ABAS -->
+<!-- SEÇÃO DE PREÇOS COM ABAS E IMAGENS LATERAIS -->
 <div class="container" id="precos" style="padding-top: 60px; padding-bottom: 60px;">
     
     <h2 style="text-align: center; color: var(--primary); margin-bottom: 10px;">Escolha o seu Material</h2>
@@ -269,16 +310,23 @@
     <div id="tab-portugues" class="tab-pane active">
         <div class="pricing-wrapper">
             <div class="price-box">
-                <h3>Apostila de Português</h3>
-                <ul>
-                    <li>✅ Teoria esquematizada passo a passo</li>
-                    <li>✅ Questões comentadas de fixação</li>
-                    <li>✅ Foco total no nível de exigência da banca</li>
-                </ul>
-                <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
-                <span class="price-value">R$ 49,90</span>
-                <!-- Substitua o # pelo link de checkout da Hotmart -->
-                <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                <!-- CAMPO PARA IMAGEM DA APOSTILA DE PORTUGUÊS -->
+                <div class="product-image-container">
+                    <img src="img/apostila-portugues.png" alt="Apostila de Português InfoFC">
+                </div>
+                
+                <div class="product-details-container">
+                    <h3>Apostila de Português</h3>
+                    <ul>
+                        <li>✅ Teoria esquematizada passo a passo</li>
+                        <li>✅ Questões comentadas de fixação</li>
+                        <li>✅ Foco total no nível de exigência da banca</li>
+                    </ul>
+                    <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
+                    <span class="price-value">R$ 49,90</span>
+                    <!-- Substitua o # pelo link de checkout da Hotmart -->
+                    <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                </div>
             </div>
         </div>
     </div>
@@ -287,15 +335,22 @@
     <div id="tab-matematica" class="tab-pane">
         <div class="pricing-wrapper">
             <div class="price-box">
-                <h3>Apostila de Matemática</h3>
-                <ul>
-                    <li>✅ Fórmulas e macetes para ganhar tempo</li>
-                    <li>✅ Questões comentadas passo a passo</li>
-                    <li>✅ Foco total no nível de exigência da banca</li>
-                </ul>
-                <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
-                <span class="price-value">R$ 49,90</span>
-                <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                <!-- CAMPO PARA IMAGEM DA APOSTILA DE MATEMÁTICA -->
+                <div class="product-image-container">
+                    <img src="img/apostila-matematica.png" alt="Apostila de Matemática InfoFC">
+                </div>
+                
+                <div class="product-details-container">
+                    <h3>Apostila de Matemática</h3>
+                    <ul>
+                        <li>✅ Fórmulas e macetes para ganhar tempo</li>
+                        <li>✅ Questões comentadas passo a passo</li>
+                        <li>✅ Foco total no nível de exigência da banca</li>
+                    </ul>
+                    <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
+                    <span class="price-value">R$ 49,90</span>
+                    <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                </div>
             </div>
         </div>
     </div>
@@ -304,15 +359,22 @@
     <div id="tab-informatica" class="tab-pane">
         <div class="pricing-wrapper">
             <div class="price-box">
-                <h3>Apostila de Informática</h3>
-                <ul>
-                    <li>✅ Windows, Pacote Office e Redes simplificados</li>
-                    <li>✅ Atalhos e pegadinhas de bancas mapeadas</li>
-                    <li>✅ Questões comentadas de fixação</li>
-                </ul>
-                <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
-                <span class="price-value">R$ 49,90</span>
-                <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                <!-- CAMPO PARA IMAGEM DA APOSTILA DE INFORMÁTICA -->
+                <div class="product-image-container">
+                    <img src="img/apostila-informatica.png" alt="Apostila de Informática InfoFC">
+                </div>
+                
+                <div class="product-details-container">
+                    <h3>Apostila de Informática</h3>
+                    <ul>
+                        <li>✅ Windows, Pacote Office e Redes simplificados</li>
+                        <li>✅ Atalhos e pegadinhas de bancas mapeadas</li>
+                        <li>✅ Questões comentadas de fixação</li>
+                    </ul>
+                    <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
+                    <span class="price-value">R$ 49,90</span>
+                    <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                </div>
             </div>
         </div>
     </div>
@@ -321,15 +383,22 @@
     <div id="tab-raciocinio" class="tab-pane">
         <div class="pricing-wrapper">
             <div class="price-box">
-                <h3>Apostila Raciocínio Lógico</h3>
-                <ul>
-                    <li>✅ Estruturas lógicas e tabelas verdade</li>
-                    <li>✅ Resolução de problemas sem complicação</li>
-                    <li>✅ Exercícios práticos focados no edital</li>
-                </ul>
-                <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
-                <span class="price-value">R$ 49,90</span>
-                <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                <!-- CAMPO PARA IMAGEM DA APOSTILA DE RLM -->
+                <div class="product-image-container">
+                    <img src="img/apostila-rlm.png" alt="Apostila de Raciocínio Lógico InfoFC">
+                </div>
+                
+                <div class="product-details-container">
+                    <h3>Apostila Raciocínio Lógico</h3>
+                    <ul>
+                        <li>✅ Estruturas lógicas e tabelas verdade</li>
+                        <li>✅ Resolução de problemas sem complicação</li>
+                        <li>✅ Exercícios práticos focados no edital</li>
+                    </ul>
+                    <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
+                    <span class="price-value">R$ 49,90</span>
+                    <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                </div>
             </div>
         </div>
     </div>
@@ -338,15 +407,22 @@
     <div id="tab-gerais" class="tab-pane">
         <div class="pricing-wrapper">
             <div class="price-box">
-                <h3>Conhecimentos Gerais & Atualidades</h3>
-                <ul>
-                    <li>✅ História, Geografia e Símbolos de Delfinópolis</li>
-                    <li>✅ Geopolítica, Cerrado e Fatos do Mundo</li>
-                    <li>✅ Foco total no Edital 01/2026</li>
-                </ul>
-                <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
-                <span class="price-value">R$ 49,90</span>
-                <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                <!-- CAMPO PARA IMAGEM DA APOSTILA DE GERAIS -->
+                <div class="product-image-container">
+                    <img src="img/apostila-gerais.png" alt="Apostila de Conhecimentos Gerais InfoFC">
+                </div>
+                
+                <div class="product-details-container">
+                    <h3>Conhecimentos Gerais & Atualidades</h3>
+                    <ul>
+                        <li>✅ História, Geografia e Símbolos de Delfinópolis</li>
+                        <li>✅ Geopolítica, Cerrado e Fatos do Mundo</li>
+                        <li>✅ Foco total no Edital 01/2026</li>
+                    </ul>
+                    <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
+                    <span class="price-value">R$ 49,90</span>
+                    <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                </div>
             </div>
         </div>
     </div>
@@ -355,15 +431,22 @@
     <div id="tab-legislacao" class="tab-pane">
         <div class="pricing-wrapper">
             <div class="price-box">
-                <h3>Legislação Municipal</h3>
-                <ul>
-                    <li>✅ Lei Orgânica de Delfinópolis mastigada</li>
-                    <li>✅ Estatuto dos Servidores e Lei de Licitações</li>
-                    <li>✅ Questões práticas e alertas de pegadinhas</li>
-                </ul>
-                <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
-                <span class="price-value">R$ 49,90</span>
-                <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                <!-- CAMPO PARA IMAGEM DA APOSTILA DE LEGISLAÇÃO -->
+                <div class="product-image-container">
+                    <img src="img/apostila-legislacao.png" alt="Apostila de Legislação Municipal InfoFC">
+                </div>
+                
+                <div class="product-details-container">
+                    <h3>Legislação Municipal</h3>
+                    <ul>
+                        <li>✅ Lei Orgânica de Delfinópolis mastigada</li>
+                        <li>✅ Estatuto dos Servidores e Lei de Licitações</li>
+                        <li>✅ Questões práticas e alertas de pegadinhas</li>
+                    </ul>
+                    <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
+                    <span class="price-value">R$ 49,90</span>
+                    <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                </div>
             </div>
         </div>
     </div>
@@ -372,15 +455,22 @@
     <div id="tab-especificos" class="tab-pane">
         <div class="pricing-wrapper">
             <div class="price-box">
-                <h3>Conhecimentos Específicos</h3>
-                <ul>
-                    <li>✅ Específico para Cargos do Magistério</li>
-                    <li>✅ LDB, ECA, BNCC, PNE e Teorias de Aprendizagem</li>
-                    <li>✅ Metodologia exclusiva Profª Cíntia</li>
-                </ul>
-                <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
-                <span class="price-value">R$ 68,90</span>
-                <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                <!-- CAMPO PARA IMAGEM DA APOSTILA DE ESPECÍFICOS -->
+                <div class="product-image-container">
+                    <img src="img/apostila-especificos.png" alt="Apostila de Conhecimentos Específicos InfoFC">
+                </div>
+                
+                <div class="product-details-container">
+                    <h3>Conhecimentos Específicos</h3>
+                    <ul>
+                        <li>✅ Específico para Cargos do Magistério</li>
+                        <li>✅ LDB, ECA, BNCC, PNE e Teorias de Aprendizagem</li>
+                        <li>✅ Metodologia exclusiva Profª Cíntia</li>
+                    </ul>
+                    <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
+                    <span class="price-value">R$ 68,90</span>
+                    <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                </div>
             </div>
         </div>
     </div>
@@ -389,17 +479,24 @@
     <div id="tab-combo-basicas" class="tab-pane">
         <div class="pricing-wrapper">
             <div class="price-box featured">
-                <span class="badge" style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); white-space: nowrap;">O ESSENCIAL PARA QUALQUER VAGA</span>
-                <h3>Combo Apostilas Básicas</h3>
-                <p style="margin-top: 5px; color: #64748b;">A base sólida que você precisa para ser aprovado.</p>
-                <ul>
-                    <li>✅ Português, Matemática e Informática</li>
-                    <li>✅ Raciocínio Lógico</li>
-                    <li>✅ Conhecimentos Gerais e Legislação Municipal</li>
-                </ul>
-                <div class="bonus-free">🎁 <strong>BÔNUS INCLUÍDO:</strong> Você ganha o nosso Caderno de Erros + Guia de Estudos 100% GRÁTIS nesta opção!</div>
-                <span class="price-value">R$ 149,90</span> <!-- Ajuste o valor deste combo se necessário, deixei um atrativo -->
-                <a href="#" class="cta-button">GARANTIR MEU COMBO</a>
+                <!-- CAMPO PARA IMAGEM DO COMBO BÁSICAS -->
+                <div class="product-image-container">
+                    <img src="img/combo-basicas.png" alt="Combo Apostilas Básicas InfoFC">
+                </div>
+                
+                <div class="product-details-container">
+                    <span class="badge" style="display: inline-block; margin-bottom: 10px;">O ESSENCIAL PARA QUALQUER VAGA</span>
+                    <h3>Combo Apostilas Básicas</h3>
+                    <p style="margin-top: 5px; color: #64748b;">A base sólida que você precisa para ser aprovado.</p>
+                    <ul>
+                        <li>✅ Português, Matemática e Informática</li>
+                        <li>✅ Raciocínio Lógico</li>
+                        <li>✅ Conhecimentos Gerais e Legislação Municipal</li>
+                    </ul>
+                    <div class="bonus-free">🎁 <strong>BÔNUS INCLUÍDO:</strong> Você ganha o nosso Caderno de Erros + Guia de Estudos 100% GRÁTIS nesta opção!</div>
+                    <span class="price-value">R$ 149,90</span>
+                    <a href="#" class="cta-button">GARANTIR MEU COMBO</a>
+                </div>
             </div>
         </div>
     </div>
@@ -408,16 +505,23 @@
     <div id="tab-combo-anos-iniciais" class="tab-pane">
         <div class="pricing-wrapper">
             <div class="price-box featured">
-                <span class="badge" style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); white-space: nowrap;">A PREPARAÇÃO DEFINITIVA</span>
-                <h3>Combo Prof. Anos Iniciais</h3>
-                <p style="margin-top: 5px; color: #64748b;">Absolutamente tudo o que você precisa para a sua vaga.</p>
-                <ul>
-                    <li>✅ <strong>Todas as Básicas:</strong> Port, Mat, Inf, RLM, Gerais e Legislação.</li>
-                    <li>✅ <strong>Específicos Anos Iniciais:</strong> Material focado na sua área de atuação educacional.</li>
-                </ul>
-                <div class="bonus-free">🎁 <strong>BÔNUS INCLUÍDO:</strong> Você ganha o nosso Caderno de Erros + Guia de Estudos 100% GRÁTIS nesta opção!</div>
-                <span class="price-value">R$ 180,00</span>
-                <a href="#" class="cta-button">GARANTIR MEU COMBO</a>
+                <!-- CAMPO PARA IMAGEM DO COMBO ANOS INICIAIS -->
+                <div class="product-image-container">
+                    <img src="img/combo-anos-iniciais.png" alt="Combo Professor Anos Iniciais InfoFC">
+                </div>
+                
+                <div class="product-details-container">
+                    <span class="badge" style="display: inline-block; margin-bottom: 10px;">A PREPARAÇÃO DEFINITIVA</span>
+                    <h3>Combo Prof. Anos Iniciais</h3>
+                    <p style="margin-top: 5px; color: #64748b;">Absolutamente tudo o que você precisa para a sua vaga.</p>
+                    <ul>
+                        <li>✅ <strong>Todas as Básicas:</strong> Port, Mat, Inf, RLM, Gerais e Legislação.</li>
+                        <li>✅ <strong>Específicos Anos Iniciais:</strong> Material focado na sua área de atuação educacional.</li>
+                    </ul>
+                    <div class="bonus-free">🎁 <strong>BÔNUS INCLUÍDO:</strong> Você ganha o nosso Caderno de Erros + Guia de Estudos 100% GRÁTIS nesta opção!</div>
+                    <span class="price-value">R$ 180,00</span>
+                    <a href="#" class="cta-button">GARANTIR MEU COMBO</a>
+                </div>
             </div>
         </div>
     </div>
@@ -426,16 +530,23 @@
     <div id="tab-combo-ed-infantil" class="tab-pane">
         <div class="pricing-wrapper">
             <div class="price-box featured">
-                <span class="badge" style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); white-space: nowrap;">A PREPARAÇÃO DEFINITIVA</span>
-                <h3>Combo Prof. Ed. Infantil</h3>
-                <p style="margin-top: 5px; color: #64748b;">Absolutamente tudo o que você precisa para a sua vaga.</p>
-                <ul>
-                    <li>✅ <strong>Todas as Básicas:</strong> Port, Mat, Inf, RLM, Gerais e Legislação.</li>
-                    <li>✅ <strong>Específicos Ed. Infantil:</strong> LDB, BNCC, ECA, Teorias e Práticas da Educação Infantil.</li>
-                </ul>
-                <div class="bonus-free">🎁 <strong>BÔNUS INCLUÍDO:</strong> Você ganha o nosso Caderno de Erros + Guia de Estudos 100% GRÁTIS nesta opção!</div>
-                <span class="price-value">R$ 180,00</span>
-                <a href="#" class="cta-button">GARANTIR MEU COMBO</a>
+                <!-- CAMPO PARA IMAGEM DO COMBO ED INFANTIL -->
+                <div class="product-image-container">
+                    <img src="img/combo-ed-infantil.png" alt="Combo Professor Educação Infantil InfoFC">
+                </div>
+                
+                <div class="product-details-container">
+                    <span class="badge" style="display: inline-block; margin-bottom: 10px;">A PREPARAÇÃO DEFINITIVA</span>
+                    <h3>Combo Prof. Ed. Infantil</h3>
+                    <p style="margin-top: 5px; color: #64748b;">Absolutamente tudo o que você precisa para a sua vaga.</p>
+                    <ul>
+                        <li>✅ <strong>Todas as Básicas:</strong> Port, Mat, Inf, RLM, Gerais e Legislação.</li>
+                        <li>✅ <strong>Específicos Ed. Infantil:</strong> LDB, BNCC, ECA, Teorias e Práticas da Educação Infantil.</li>
+                    </ul>
+                    <div class="bonus-free">🎁 <strong>BÔNUS INCLUÍDO:</strong> Você ganha o nosso Caderno de Erros + Guia de Estudos 100% GRÁTIS nesta opção!</div>
+                    <span class="price-value">R$ 180,00</span>
+                    <a href="#" class="cta-button">GARANTIR MEU COMBO</a>
+                </div>
             </div>
         </div>
     </div>
@@ -450,6 +561,7 @@
         
         <div class="profile-grid">
             <div class="profile-card">
+                <!-- Mantida sua imagem da Cintia -->
                 <img src="img/cintia.png" alt="Professora Cíntia Faleiros Silva Chagas" class="profile-photo">
                 <h3>Cíntia Faleiros Silva Chagas</h3>
                 <span class="profile-role">Núcleo de Aprendizagem InfoFC</span>
@@ -460,6 +572,7 @@
             </div>
             
             <div class="profile-card">
+                <!-- Mantida sua imagem do Felipe -->
                 <img src="img/felipe.png" alt="Felipe Eduardo Faleiros Chagas" class="profile-photo">
                 <h3>Felipe Eduardo Faleiros Chagas</h3>
                 <span class="profile-role">InfoFC Informática</span>
@@ -490,6 +603,7 @@
 </div>
 
 <!-- LOGO DO WHATSAPP FLUTUANTE -->
+<!-- Mantida sua imagem do logo -->
 <a href="https://wa.me/5535999012019" target="_blank" class="floating-logo" title="Dúvidas? Fale com a InfoFC">
     <img src="img/logo.png" alt="Logo WhatsApp">
 </a>
@@ -512,7 +626,7 @@
 
         // Mostra o conteúdo da aba selecionada e ativa o botão
         var selectedTab = document.getElementById(tabName);
-        selectedTab.style.display = "block";
+        selectedTab.style.display = "flex"; // Alterado de block para flex para manter o layout lateral
         
         // Timeout minúsculo apenas para a animação CSS funcionar perfeitamente
         setTimeout(() => {
