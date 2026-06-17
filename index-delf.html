@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1421820632743420'); /* Lembre de colocar o Pixel correto de Delfinópolis se mudar */
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1421820632743420&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concurso Delfinópolis - Preparação Definitiva | InfoFC</title>
+    <meta property="og:title" content="Concurso Delfinópolis - Material Focado no Edital 01/2026">
+    <meta property="og:description" content="Prepare-se com quem entende! Teoria esquematizada, questões comentadas e bônus exclusivos.">
+    <!-- Atualize o link da imagem quando hospedar a capa nova -->
+    <meta property="og:image" content="https://seusite.com.br/img/img-delfinopolis.png">
+    <meta property="og:url" content="https://seusite.com.br">
+    <meta property="og:type" content="website">
+    
+    <meta name="description" content="Material completo para o concurso de Delfinópolis/MG com o Núcleo de Aprendizagem InfoFC.">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Paleta ajustada: Um azul escuro e laranja/dourado combinam muito com Delfinópolis/InfoFC */
+        :root { --primary: #0f172a; --secondary: #1e293b; --accent: #f59e0b; --accent-hover: #d97706; --danger: #dc2626; --light: #f8fafc; --text: #334155; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--light); color: var(--text); line-height: 1.6; }
+        
+        header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 60px 20px; text-align: center; }
+        
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        .badge { background: var(--accent); color: #fff; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px;}
+        
+        h1 { font-size: 2.5em; margin: 15px 0; line-height: 1.2; color: #fff; }
+
+        .header-logo {
+            max-width: 100%;
+            width: 250px;
+            height: auto;
+            margin: 15px 0 25px 0;
+            display: inline-block;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
+        }
+        
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            text-align: left;
+        }
+        
+        /* BOTÕES */
+        .cta-button { display: flex; justify-content: center; align-items: center; text-align: center; background: var(--accent); color: white; padding: 18px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2em; margin-top: 20px; cursor: pointer; border: none; transition: 0.3s; width: 100%; box-sizing: border-box; text-transform: uppercase; box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
+        .cta-button:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.2);}
+        
+        /* SISTEMA DE ABAS (NOVO) */
+        .tabs-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 40px 0 30px 0;
+        }
+        .tab-btn {
+            background: white;
+            border: 2px solid #cbd5e1;
+            padding: 12px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text);
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+        .tab-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+        }
+        .tab-btn.combo {
+            background: #fef3c7; /* Fundo amarelinho para destacar */
+            border-color: var(--accent);
+            color: #92400e;
+        }
+        .tab-btn.combo.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .tab-pane.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* CAIXAS DE PREÇO */
+        .pricing-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+        .price-box { 
+            background: white; 
+            border: 2px solid #e2e8f0; 
+            padding: 40px; 
+            border-radius: 15px; 
+            text-align: center; 
+            max-width: 450px;
+            width: 100%;
+            position: relative; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .price-box.featured { 
+            border-color: var(--accent); 
+            box-shadow: 0 15px 35px rgba(245, 158, 11, 0.15); 
+        }
+        .price-value { font-size: 3em; font-weight: bold; color: var(--primary); display: block; margin: 15px 0; line-height: 1;}
+        .price-box ul { text-align: left; padding: 0; list-style: none; margin: 20px 0; color: #475569;}
+        .price-box li { margin-bottom: 12px; font-size: 0.95em; }
+        .bonus-alert { background: #fef2f2; border: 1px dashed #fca5a5; padding: 10px; border-radius: 8px; color: #991b1b; font-size: 0.85em; margin-top: 15px;}
+        .bonus-free { background: #ecfccb; border: 1px dashed #bef264; padding: 10px; border-radius: 8px; color: #3f6212; font-size: 0.85em; margin-top: 15px; font-weight: bold;}
+
+        /* CONTEÚDO PROGRAMÁTICO */
+        .syllabus-section { background: #f1f5f9; padding: 60px 20px; border-bottom: 1px solid #e2e8f0; }
+        .syllabus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        .syllabus-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border-left: 5px solid var(--accent); transition: transform 0.3s ease; }
+        .syllabus-card:hover { transform: translateY(-5px); }
+        .card-icon { font-size: 2em; margin-bottom: 15px; background: #fffbeb; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+        .syllabus-card h3 { color: var(--primary); margin: 10px 0; font-size: 1.3em; }
+
+        /* PERFIS */
+        .profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .profile-card { background: white; border: 2px solid #e2e8f0; border-radius: 15px; padding: 30px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .profile-photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent); margin-bottom: 20px; padding: 3px; }
+        .profile-role { color: var(--accent); font-weight: bold; font-size: 0.9em; text-transform: uppercase; margin-bottom: 10px; display: block; }
+
+        footer { text-align: center; padding: 40px; background: #e2e8f0; color: #64748b; margin-top: 50px; }
+
+        /* NOTIFICAÇÃO E FLOATING */
+        .sales-toast { position: fixed; bottom: 20px; left: 50%; background: #0f172a; color: white; padding: 15px 20px; border-radius: 12px; display: flex; align-items: center; gap: 15px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3); z-index: 1000; max-width: 350px; opacity: 0; transform: translateY(50px); transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); pointer-events: none; }
+        .sales-toast.show { opacity: 1; transform: translate(-50%, 0); pointer-events: all; }
+        .toast-icon { font-size: 1.5em; background: #1e293b; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid #334155; }
+        .toast-content p { margin: 0; font-size: 0.9em; }
+        .toast-title { font-weight: bold; }
+        .toast-close { background: none; border: none; color: #64748b; font-size: 1.5em; cursor: pointer; padding: 0 0 0 10px; }
+
+        .floating-logo { position: fixed; bottom: 30px; right: 30px; z-index: 1000; width: 80px; height: 80px; background: white; border-radius: 50%; box-shadow: 0 5px 20px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; border: 3px solid #e2e8f0; transition: transform 0.3s; }
+        .floating-logo img { width: 60%; height: auto; }
+        .floating-logo:hover { transform: scale(1.1) rotate(5deg); }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .header-flex { flex-direction: column-reverse; text-align: center; }
+            .syllabus-grid { grid-template-columns: 1fr; }
+            .tabs-nav { flex-direction: column; padding: 0 20px; }
+            .tab-btn { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="header-flex">
+            
+            <div class="header-image">
+                <!-- Coloque a imagem renderizada do material aqui -->
+                 <img src="img/mockup-delfinopolis.png" alt="Apostilas InfoFC Delfinópolis" style="width: 100%; max-width: 400px; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5));">
+            </div>
+
+            <div class="header-text">
+                <span class="badge">Focado no Edital 01/2026</span>
+                <br>
+                <!-- Insira o brasão de Delfinópolis aqui -->
+                <img src="img/brasao-delfinopolis.png" alt="Brasão Prefeitura Delfinópolis" class="header-logo">
+
+                <h1>Aprovação no Concurso Prefeitura de Delfinópolis/MG</h1>
+                <p style="font-size: 1.2em; margin-bottom: 20px; color: #e2e8f0;">
+                    Chega de estudar por materiais genéricos. Domine o edital com a metodologia esquematizada do <strong>Núcleo de Aprendizagem InfoFC</strong>.
+                </p>
+                
+                <a href="#precos" class="cta-button">VER MATERIAIS E PREÇOS</a>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<section class="syllabus-section">
+    <div class="container">
+        <h2 style="text-align: center; color: var(--primary); margin-bottom: 10px;">O que você vai encontrar?</h2>
+        <p style="text-align: center; color: #64748b; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+            Estruturamos as apostilas dividindo a teoria de forma inteligente, repletas de quadros de resumo, alertas de pegadinhas da banca e blocos práticos de questões comentadas.
+        </p>
+
+        <div class="syllabus-grid">
+            <div class="syllabus-card">
+                <div class="card-icon">🏛️</div>
+                <h3>Legislação Municipal</h3>
+                <p>Domine a Lei Orgânica, o Estatuto dos Servidores, os Princípios da Administração Pública e a Nova Lei de Licitações.</p>
+            </div>
+            <div class="syllabus-card">
+                <div class="card-icon">🌍</div>
+                <h3>Conhecimentos Gerais & Atualidades</h3>
+                <p>História e geografia de Delfinópolis/MG, Geopolítica, Meio Ambiente e a realidade do Cerrado.</p>
+            </div>
+            <div class="syllabus-card">
+                <div class="card-icon">💻</div>
+                <h3>Informática p/ Concursos</h3>
+                <p>Hardware, Software, Windows 10, Word, Excel, PowerPoint e Noções de Segurança da Informação mastigadas.</p>
+            </div>
+            <div class="syllabus-card">
+                <div class="card-icon">📚</div>
+                <h3>Conhecimentos Específicos (Professores)</h3>
+                <p>LDB, ECA, PNE, BNCC, Currículo de Minas Gerais, Piaget, Vygotsky e toda a Legislação Educacional.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SEÇÃO DE PREÇOS COM ABAS -->
+<div class="container" id="precos" style="padding-top: 60px; padding-bottom: 60px;">
+    
+    <h2 style="text-align: center; color: var(--primary); margin-bottom: 10px;">Escolha o seu Material</h2>
+    <p style="text-align: center; color: #64748b; margin-bottom: 30px;">Selecione a aba desejada abaixo para ver os detalhes e garantir a sua vaga.</p>
+
+    <!-- NAVEGAÇÃO DAS ABAS -->
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="openTab(event, 'tab-portugues')">Português</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-matematica')">Matemática</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-informatica')">Informática</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-raciocinio')">Raciocínio Lógico</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-gerais')">Conhecimentos Gerais</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-legislacao')">Legislação Municipal</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-especificos')">Conhecimentos Específicos</button>
+        <button class="tab-btn combo" onclick="openTab(event, 'tab-combo-basicas')">⭐ Combo Básicas</button>
+        <button class="tab-btn combo" onclick="openTab(event, 'tab-combo-anos-iniciais')">🏆 Combo Prof. Anos Iniciais</button>
+        <button class="tab-btn combo" onclick="openTab(event, 'tab-combo-ed-infantil')">🏆 Combo Prof. Ed. Infantil</button>
+    </div>
+
+    <!-- CONTEÚDO DAS ABAS -->
+    
+    <!-- 1. PORTUGUÊS -->
+    <div id="tab-portugues" class="tab-pane active">
+        <div class="pricing-wrapper">
+            <div class="price-box">
+                <h3>Apostila de Português</h3>
+                <ul>
+                    <li>✅ Teoria esquematizada passo a passo</li>
+                    <li>✅ Questões comentadas de fixação</li>
+                    <li>✅ Foco total no nível de exigência da banca</li>
+                </ul>
+                <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
+                <span class="price-value">R$ 49,90</span>
+                <!-- Substitua o # pelo link de checkout da Hotmart -->
+                <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. MATEMÁTICA -->
+    <div id="tab-matematica" class="tab-pane">
+        <div class="pricing-wrapper">
+            <div class="price-box">
+                <h3>Apostila de Matemática</h3>
+                <ul>
+                    <li>✅ Fórmulas e macetes para ganhar tempo</li>
+                    <li>✅ Questões comentadas passo a passo</li>
+                    <li>✅ Foco total no nível de exigência da banca</li>
+                </ul>
+                <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
+                <span class="price-value">R$ 49,90</span>
+                <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. INFORMÁTICA -->
+    <div id="tab-informatica" class="tab-pane">
+        <div class="pricing-wrapper">
+            <div class="price-box">
+                <h3>Apostila de Informática</h3>
+                <ul>
+                    <li>✅ Windows, Pacote Office e Redes simplificados</li>
+                    <li>✅ Atalhos e pegadinhas de bancas mapeadas</li>
+                    <li>✅ Questões comentadas de fixação</li>
+                </ul>
+                <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
+                <span class="price-value">R$ 49,90</span>
+                <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. RACIOCÍNIO LÓGICO -->
+    <div id="tab-raciocinio" class="tab-pane">
+        <div class="pricing-wrapper">
+            <div class="price-box">
+                <h3>Apostila Raciocínio Lógico</h3>
+                <ul>
+                    <li>✅ Estruturas lógicas e tabelas verdade</li>
+                    <li>✅ Resolução de problemas sem complicação</li>
+                    <li>✅ Exercícios práticos focados no edital</li>
+                </ul>
+                <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
+                <span class="price-value">R$ 49,90</span>
+                <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. CONHECIMENTOS GERAIS -->
+    <div id="tab-gerais" class="tab-pane">
+        <div class="pricing-wrapper">
+            <div class="price-box">
+                <h3>Conhecimentos Gerais & Atualidades</h3>
+                <ul>
+                    <li>✅ História, Geografia e Símbolos de Delfinópolis</li>
+                    <li>✅ Geopolítica, Cerrado e Fatos do Mundo</li>
+                    <li>✅ Foco total no Edital 01/2026</li>
+                </ul>
+                <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
+                <span class="price-value">R$ 49,90</span>
+                <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. LEGISLAÇÃO MUNICIPAL -->
+    <div id="tab-legislacao" class="tab-pane">
+        <div class="pricing-wrapper">
+            <div class="price-box">
+                <h3>Legislação Municipal</h3>
+                <ul>
+                    <li>✅ Lei Orgânica de Delfinópolis mastigada</li>
+                    <li>✅ Estatuto dos Servidores e Lei de Licitações</li>
+                    <li>✅ Questões práticas e alertas de pegadinhas</li>
+                </ul>
+                <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
+                <span class="price-value">R$ 49,90</span>
+                <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. CONHECIMENTOS ESPECÍFICOS AVULSO -->
+    <div id="tab-especificos" class="tab-pane">
+        <div class="pricing-wrapper">
+            <div class="price-box">
+                <h3>Conhecimentos Específicos</h3>
+                <ul>
+                    <li>✅ Específico para Cargos do Magistério</li>
+                    <li>✅ LDB, ECA, BNCC, PNE e Teorias de Aprendizagem</li>
+                    <li>✅ Metodologia exclusiva Profª Cíntia</li>
+                </ul>
+                <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
+                <span class="price-value">R$ 68,90</span>
+                <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. COMBO BÁSICAS -->
+    <div id="tab-combo-basicas" class="tab-pane">
+        <div class="pricing-wrapper">
+            <div class="price-box featured">
+                <span class="badge" style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); white-space: nowrap;">O ESSENCIAL PARA QUALQUER VAGA</span>
+                <h3>Combo Apostilas Básicas</h3>
+                <p style="margin-top: 5px; color: #64748b;">A base sólida que você precisa para ser aprovado.</p>
+                <ul>
+                    <li>✅ Português, Matemática e Informática</li>
+                    <li>✅ Raciocínio Lógico</li>
+                    <li>✅ Conhecimentos Gerais e Legislação Municipal</li>
+                </ul>
+                <div class="bonus-free">🎁 <strong>BÔNUS INCLUÍDO:</strong> Você ganha o nosso Caderno de Erros + Guia de Estudos 100% GRÁTIS nesta opção!</div>
+                <span class="price-value">R$ 149,90</span> <!-- Ajuste o valor deste combo se necessário, deixei um atrativo -->
+                <a href="#" class="cta-button">GARANTIR MEU COMBO</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. COMBO ANOS INICIAIS -->
+    <div id="tab-combo-anos-iniciais" class="tab-pane">
+        <div class="pricing-wrapper">
+            <div class="price-box featured">
+                <span class="badge" style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); white-space: nowrap;">A PREPARAÇÃO DEFINITIVA</span>
+                <h3>Combo Prof. Anos Iniciais</h3>
+                <p style="margin-top: 5px; color: #64748b;">Absolutamente tudo o que você precisa para a sua vaga.</p>
+                <ul>
+                    <li>✅ <strong>Todas as Básicas:</strong> Port, Mat, Inf, RLM, Gerais e Legislação.</li>
+                    <li>✅ <strong>Específicos Anos Iniciais:</strong> Material focado na sua área de atuação educacional.</li>
+                </ul>
+                <div class="bonus-free">🎁 <strong>BÔNUS INCLUÍDO:</strong> Você ganha o nosso Caderno de Erros + Guia de Estudos 100% GRÁTIS nesta opção!</div>
+                <span class="price-value">R$ 180,00</span>
+                <a href="#" class="cta-button">GARANTIR MEU COMBO</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 10. COMBO ED INFANTIL -->
+    <div id="tab-combo-ed-infantil" class="tab-pane">
+        <div class="pricing-wrapper">
+            <div class="price-box featured">
+                <span class="badge" style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); white-space: nowrap;">A PREPARAÇÃO DEFINITIVA</span>
+                <h3>Combo Prof. Ed. Infantil</h3>
+                <p style="margin-top: 5px; color: #64748b;">Absolutamente tudo o que você precisa para a sua vaga.</p>
+                <ul>
+                    <li>✅ <strong>Todas as Básicas:</strong> Port, Mat, Inf, RLM, Gerais e Legislação.</li>
+                    <li>✅ <strong>Específicos Ed. Infantil:</strong> LDB, BNCC, ECA, Teorias e Práticas da Educação Infantil.</li>
+                </ul>
+                <div class="bonus-free">🎁 <strong>BÔNUS INCLUÍDO:</strong> Você ganha o nosso Caderno de Erros + Guia de Estudos 100% GRÁTIS nesta opção!</div>
+                <span class="price-value">R$ 180,00</span>
+                <a href="#" class="cta-button">GARANTIR MEU COMBO</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- PROFESSORES -->
+<section style="background: #f8fafc; padding: 60px 20px;">
+    <div class="container">
+        <h2 style="text-align: center; color: var(--primary); margin-bottom: 10px;">Quem preparou este material?</h2>
+        <p style="text-align: center; color: #64748b;">A união da Tecnologia com a Pedagogia para a sua aprovação.</p>
+        
+        <div class="profile-grid">
+            <div class="profile-card">
+                <img src="img/cintia.png" alt="Professora Cíntia Faleiros Silva Chagas" class="profile-photo">
+                <h3>Cíntia Faleiros Silva Chagas</h3>
+                <span class="profile-role">Núcleo de Aprendizagem InfoFC</span>
+                <p style="font-size: 0.95em; color: #475569;">
+                    <strong>Professora Titular</strong><br><br>
+                    Graduada em Pedagogia e pós-graduada em Neuropsicopedagogia, além de Gestão em EAD. Com uma <strong>trajetória de 12 anos</strong> na Educação Básica e a autoridade de quem já conquistou <strong>3 aprovações</strong> em concursos, a Profª Cíntia mapeou o caminho exato para a sua vaga!
+                </p>
+            </div>
+            
+            <div class="profile-card">
+                <img src="img/felipe.png" alt="Felipe Eduardo Faleiros Chagas" class="profile-photo">
+                <h3>Felipe Eduardo Faleiros Chagas</h3>
+                <span class="profile-role">InfoFC Informática</span>
+                <p style="font-size: 0.95em; color: #475569;">
+                    <strong>Diretor Técnico</strong><br><br>
+                    Formação superior em Análise e Desenvolvimento de Sistemas. É o especialista responsável por descomplicar a Informática para Concursos na <strong>InfoFC</strong>, garantindo um material visual, sem jargões complexos e com foco total na resolução de provas.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <a href="termo.html" style="color: var(--primary); font-weight: bold; text-decoration: none;">AVISO LEGAL</a>
+    <p style="margin-top: 15px;"><strong>Núcleo de Aprendizagem InfoFC</strong></p>
+    <p>Rua Irmã Paulina, 174 - Alto Taquaral - Cássia/MG</p>
+    <p style="font-size: 0.8em; margin-top: 10px;">&copy; 2026 Todos os direitos reservados.</p>
+</footer>
+
+<!-- NOTIFICAÇÃO DE VENDAS -->
+<div id="sales-toast" class="sales-toast">
+    <div class="toast-icon">🔥</div>
+    <div class="toast-content">
+        <p class="toast-title"><span id="sales-count">24</span> pessoas garantiram o material hoje!</p>
+        <p class="toast-subtitle">Acesso digital imediato após o pagamento.</p>
+    </div>
+    <button class="toast-close" onclick="fecharToast()">×</button>
+</div>
+
+<!-- LOGO DO WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5535999012019" target="_blank" class="floating-logo" title="Dúvidas? Fale com a InfoFC">
+    <img src="img/logo.png" alt="Logo WhatsApp">
+</a>
+
+<script>
+    // --- LÓGICA DAS ABAS (TABS) ---
+    function openTab(evt, tabName) {
+        // Esconde todo o conteúdo das abas
+        var tabpanes = document.getElementsByClassName("tab-pane");
+        for (var i = 0; i < tabpanes.length; i++) {
+            tabpanes[i].style.display = "none";
+            tabpanes[i].classList.remove("active");
+        }
+
+        // Remove a classe 'active' de todos os botões
+        var tabbtns = document.getElementsByClassName("tab-btn");
+        for (var i = 0; i < tabbtns.length; i++) {
+            tabbtns[i].classList.remove("active");
+        }
+
+        // Mostra o conteúdo da aba selecionada e ativa o botão
+        var selectedTab = document.getElementById(tabName);
+        selectedTab.style.display = "block";
+        
+        // Timeout minúsculo apenas para a animação CSS funcionar perfeitamente
+        setTimeout(() => {
+            selectedTab.classList.add("active");
+        }, 10);
+        
+        evt.currentTarget.classList.add("active");
+    }
+
+    // --- LÓGICA DA NOTIFICAÇÃO DE VENDAS ---
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const KEY_STORAGE = 'infofc_sales_delfinopolis'; 
+        const TEMPO_EXPIRACAO = 24 * 60 * 60 * 1000; 
+        const agora = new Date().getTime();
+
+        let numeroVendas;
+        const dadoSalvo = localStorage.getItem(KEY_STORAGE);
+
+        if (dadoSalvo) {
+            const objeto = JSON.parse(dadoSalvo);
+            if (agora - objeto.timestamp < TEMPO_EXPIRACAO) {
+                numeroVendas = objeto.value; 
+            }
+        }
+
+        if (!numeroVendas) {
+            numeroVendas = getRandomInt(12, 38);
+            localStorage.setItem(KEY_STORAGE, JSON.stringify({
+                value: numeroVendas,
+                timestamp: agora
+            }));
+        }
+
+        document.getElementById('sales-count').innerText = numeroVendas;
+
+        setTimeout(function() {
+            document.getElementById('sales-toast').classList.add('show');
+        }, 3500);
+    });
+
+    function fecharToast() {
+        document.getElementById('sales-toast').classList.remove('show');
+    }
+</script>
+
+</body>
+</html>
