@@ -68,7 +68,7 @@
         .cta-button { display: flex; justify-content: center; align-items: center; text-align: center; background: var(--accent); color: white; padding: 18px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2em; margin-top: 20px; cursor: pointer; border: none; transition: 0.3s; width: 100%; box-sizing: border-box; text-transform: uppercase; box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
         .cta-button:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.2);}
         
-        /* SISTEMA DE ABAS (NOVO) */
+        /* SISTEMA DE ABAS */
         .tabs-nav {
             display: flex;
             flex-wrap: wrap;
@@ -98,7 +98,7 @@
             box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
         }
         .tab-btn.combo {
-            background: #fef3c7; /* Fundo amarelinho para destacar */
+            background: #fef3c7;
             border-color: var(--accent);
             color: #92400e;
         }
@@ -149,7 +149,7 @@
             display: block;
         }
 
-        /* CAIXAS DE PREÇO ATUALIZADAS PARA TER IMAGEM DO LADO */
+        /* CAIXAS DE PREÇO */
         .pricing-wrapper {
             display: flex;
             justify-content: center;
@@ -159,12 +159,12 @@
             border: 2px solid #e2e8f0; 
             padding: 40px; 
             border-radius: 15px; 
-            text-align: left; /* Alinhamento geral à esquerda */
-            max-width: 800px; /* Aumentado para acomodar imagem e texto */
+            text-align: left; 
+            max-width: 800px; 
             width: 100%;
             position: relative; 
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            display: flex; /* Flexbox para colocar lado a lado */
+            display: flex; 
             align-items: center;
             gap: 30px;
         }
@@ -173,9 +173,8 @@
             box-shadow: 0 15px 35px rgba(245, 158, 11, 0.15); 
         }
         
-        /* Container da imagem dentro da price-box */
         .product-image-container {
-            flex: 0 0 250px; /* Não estica, não encolhe, base de 250px */
+            flex: 0 0 250px; 
             text-align: center;
         }
         .product-image-container img {
@@ -184,9 +183,8 @@
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
         }
 
-        /* Container do texto dentro da price-box */
         .product-details-container {
-            flex: 1; /* Ocupa o resto do espaço */
+            flex: 1; 
         }
 
         .price-value { font-size: 3em; font-weight: bold; color: var(--primary); display: block; margin: 15px 0; line-height: 1;}
@@ -195,20 +193,19 @@
         .bonus-alert { background: #fef2f2; border: 1px dashed #fca5a5; padding: 10px; border-radius: 8px; color: #991b1b; font-size: 0.85em; margin-top: 15px;}
         .bonus-free { background: #ecfccb; border: 1px dashed #bef264; padding: 10px; border-radius: 8px; color: #3f6212; font-size: 0.85em; margin-top: 15px; font-weight: bold;}
 
-        /* NOVA SEÇÃO DE VÍDEO (CSS) */
+        /* SEÇÃO DE VÍDEO */
         .video-section { background: #f1f5f9; padding: 60px 20px; border-bottom: 1px solid #e2e8f0; text-align: center;}
         
-        /* Wrapper para deixar o embed do YouTube responsivo (proporção 16:9) */
         .video-wrapper {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 ratio */
             height: 0;
             overflow: hidden;
-            max-width: 1080px; /* Aumentado para widescreen */
-            margin: 0 auto; /* Centraliza */
+            max-width: 1080px; /* Aumentado para widescreen conforme solicitado */
+            margin: 0 auto; 
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             border-radius: 12px;
-            background: #000; /* Fundo preto enquanto carrega */
+            background: #000; 
         }
         .video-wrapper iframe {
             position: absolute;
@@ -243,7 +240,6 @@
         @media (max-width: 768px) {
             .header-flex { flex-direction: column-reverse; text-align: center; }
             
-            /* Ajuste da price-box no celular: empilha imagem e texto */
             .price-box {
                 flex-direction: column;
                 text-align: center;
@@ -322,6 +318,7 @@
         <button class="tab-btn" onclick="openTab(event, 'tab-legislacao')">Legislação Municipal</button>
         <button class="tab-btn" onclick="openTab(event, 'tab-especificos')">Conhecimentos Específicos</button>
         <button class="tab-btn combo" onclick="openTab(event, 'tab-combo-medio')">⭐ Combo Nível Médio</button>
+        <button class="tab-btn combo" onclick="openTab(event, 'tab-combo-superior')">⭐ Combo Nível Superior</button>
         <button class="tab-btn combo" onclick="openTab(event, 'tab-combo-anos-iniciais')">🏆 Combo Prof. Anos Iniciais</button>
         <button class="tab-btn combo" onclick="openTab(event, 'tab-combo-ed-infantil')">🏆 Combo Prof. Ed. Infantil</button>
     </div>
@@ -451,6 +448,10 @@
     <!-- 6. CONHECIMENTOS ESPECÍFICOS (COM SUB-ABAS) -->
     <div id="tab-especificos" class="tab-pane">
         
+        <div style="background: #fffbeb; border: 1px solid #fde047; padding: 15px; border-radius: 8px; text-align: center; margin-bottom: 25px; color: #92400e; font-size: 0.95em;">
+            ⚠️ <strong>Atenção:</strong> Selecione abaixo a aba correspondente ao seu cargo para visualizar a apostila correta!
+        </div>
+
         <!-- Navegação interna das opções de específicos -->
         <div class="sub-tabs-nav">
             <button class="sub-tab-btn active" onclick="openSubTab(event, 'sub-tab-anos')">Prof. Anos Iniciais</button>
@@ -520,6 +521,7 @@
                     <ul>
                         <li>✅ Português, Informática e Raciocínio Lógico</li>
                         <li>✅ Conhecimentos Gerais e Legislação Municipal</li>
+                        <li>✅ Focado para cargos de Nível Médio</li>
                     </ul>
                     <div class="bonus-free">🎁 <strong>BÔNUS INCLUÍDO:</strong> Você ganha o nosso Caderno de Erros + Guia de Estudos 100% GRÁTIS nesta opção!</div>
                     <span class="price-value">R$ 149,90</span>
@@ -529,7 +531,32 @@
         </div>
     </div>
 
-    <!-- 8. COMBO ANOS INICIAIS -->
+    <!-- 8. COMBO BÁSICO NÍVEL SUPERIOR (NOVO) -->
+    <div id="tab-combo-superior" class="tab-pane">
+        <div class="pricing-wrapper">
+            <div class="price-box featured">
+                <div class="product-image-container">
+                    <img src="img/combo-superior.png" alt="Combo Básico Nível Superior InfoFC">
+                </div>
+                
+                <div class="product-details-container">
+                    <span class="badge" style="display: inline-block; margin-bottom: 10px;">O ESSENCIAL PARA SUA VAGA</span>
+                    <h3>Combo Básico Nível Superior</h3>
+                    <p style="margin-top: 5px; color: #64748b;">A base sólida que você precisa para ser aprovado nos cargos de Nível Superior.</p>
+                    <ul>
+                        <li>✅ Português, Informática e Raciocínio Lógico</li>
+                        <li>✅ Conhecimentos Gerais e Legislação Municipal</li>
+                        <li>✅ <strong>Atenção:</strong> Não inclui a parte de Conhecimentos Específicos do seu cargo.</li>
+                    </ul>
+                    <div class="bonus-free">🎁 <strong>BÔNUS INCLUÍDO:</strong> Você ganha o nosso Caderno de Erros + Guia de Estudos 100% GRÁTIS nesta opção!</div>
+                    <span class="price-value">R$ 149,90</span>
+                    <a href="#" class="cta-button">GARANTIR MEU COMBO</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. COMBO ANOS INICIAIS -->
     <div id="tab-combo-anos-iniciais" class="tab-pane">
         <div class="pricing-wrapper">
             <div class="price-box featured">
@@ -553,7 +580,7 @@
         </div>
     </div>
 
-    <!-- 9. COMBO ED INFANTIL -->
+    <!-- 10. COMBO ED INFANTIL -->
     <div id="tab-combo-ed-infantil" class="tab-pane">
         <div class="pricing-wrapper">
             <div class="price-box featured">
@@ -646,7 +673,7 @@
         }
 
         var selectedTab = document.getElementById(tabName);
-        selectedTab.style.display = "block"; // A div painel geral usa block
+        selectedTab.style.display = "block";
         
         setTimeout(() => {
             selectedTab.classList.add("active");
