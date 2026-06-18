@@ -64,10 +64,24 @@
             text-align: left;
         }
         
-        /* BOTÕES */
+        /* BOTÕES SIMPLES E DOS COMBOS */
         .cta-button { display: flex; justify-content: center; align-items: center; text-align: center; background: var(--accent); color: white; padding: 18px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2em; margin-top: 20px; cursor: pointer; border: none; transition: 0.3s; width: 100%; box-sizing: border-box; text-transform: uppercase; box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
         .cta-button:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.2);}
         
+        /* NOVO DESIGN: BOTÕES DUPLOS (APOSTILA VS. APOSTILA+GUIA) */
+        .purchase-options { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        
+        .option-basic { border: 2px solid #e2e8f0; padding: 15px; border-radius: 8px; text-align: center; background: #fff; }
+        .option-basic .price { font-size: 1.8em; font-weight: bold; color: var(--secondary); }
+        .option-basic .btn-outline { background: transparent; color: var(--secondary); border: 2px solid var(--secondary); padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; display: block; margin-top: 10px; transition: 0.3s; text-transform: uppercase; font-size: 0.95em;}
+        .option-basic .btn-outline:hover { background: var(--secondary); color: white; }
+
+        .option-upgrade { background: #fffbeb; border: 2px solid var(--accent); padding: 15px 15px 20px 15px; border-radius: 8px; text-align: center; position: relative; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.15);}
+        .option-upgrade .badge-upgrade { background: var(--danger); color: white; font-size: 0.75em; padding: 3px 10px; border-radius: 12px; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-weight: bold; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .option-upgrade .price { font-size: 1.8em; font-weight: bold; color: var(--accent); }
+        .option-upgrade .btn-full { background: var(--accent); color: white; padding: 14px; border-radius: 6px; text-decoration: none; font-weight: bold; display: block; margin-top: 10px; transition: 0.3s; text-transform: uppercase; font-size: 1em; border: none;}
+        .option-upgrade .btn-full:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2);}
+
         /* SISTEMA DE ABAS */
         .tabs-nav {
             display: flex;
@@ -190,7 +204,6 @@
         .price-value { font-size: 3em; font-weight: bold; color: var(--primary); display: block; margin: 15px 0; line-height: 1;}
         .price-box ul { text-align: left; padding: 0; list-style: none; margin: 20px 0; color: #475569;}
         .price-box li { margin-bottom: 12px; font-size: 0.95em; }
-        .bonus-alert { background: #fef2f2; border: 1px dashed #fca5a5; padding: 10px; border-radius: 8px; color: #991b1b; font-size: 0.85em; margin-top: 15px;}
         .bonus-free { background: #ecfccb; border: 1px dashed #bef264; padding: 10px; border-radius: 8px; color: #3f6212; font-size: 0.85em; margin-top: 15px; font-weight: bold;}
 
         /* SEÇÃO DE VÍDEO */
@@ -201,7 +214,7 @@
             padding-bottom: 56.25%; /* 16:9 ratio */
             height: 0;
             overflow: hidden;
-            max-width: 1080px; /* Widescreen */
+            max-width: 1080px; /* Mantido Widescreen */
             margin: 0 auto; 
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             border-radius: 12px;
@@ -340,9 +353,20 @@
                         <li>✅ Questões comentadas de fixação</li>
                         <li>✅ Foco total no nível de exigência da banca</li>
                     </ul>
-                    <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
-                    <span class="price-value">R$ 49,90</span>
-                    <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                    
+                    <div class="purchase-options">
+                        <div class="option-upgrade">
+                            <span class="badge-upgrade">OFERTA ESPECIAL</span>
+                            <span style="font-size: 0.85em; color: #92400e; font-weight: bold; display: block; margin-bottom: 5px;">Apostila + Guia de Estudos + Caderno de Erros</span>
+                            <span class="price">R$ 67,89</span>
+                            <a href="#" class="btn-full">COMPRAR APOSTILA + GUIA</a>
+                        </div>
+                        <div class="option-basic">
+                            <span style="font-size: 0.85em; color: #64748b; display: block; margin-bottom: 5px;">Apenas a Apostila (Sem os Bônus)</span>
+                            <span class="price">R$ 49,90</span>
+                            <a href="#" class="btn-outline">COMPRAR APENAS APOSTILA</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -364,9 +388,20 @@
                         <li>✅ Atalhos e pegadinhas de bancas mapeadas</li>
                         <li>✅ Questões comentadas de fixação</li>
                     </ul>
-                    <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
-                    <span class="price-value">R$ 49,90</span>
-                    <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                    
+                    <div class="purchase-options">
+                        <div class="option-upgrade">
+                            <span class="badge-upgrade">OFERTA ESPECIAL</span>
+                            <span style="font-size: 0.85em; color: #92400e; font-weight: bold; display: block; margin-bottom: 5px;">Apostila + Guia de Estudos + Caderno de Erros</span>
+                            <span class="price">R$ 67,89</span>
+                            <a href="#" class="btn-full">COMPRAR APOSTILA + GUIA</a>
+                        </div>
+                        <div class="option-basic">
+                            <span style="font-size: 0.85em; color: #64748b; display: block; margin-bottom: 5px;">Apenas a Apostila (Sem os Bônus)</span>
+                            <span class="price">R$ 49,90</span>
+                            <a href="#" class="btn-outline">COMPRAR APENAS APOSTILA</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -388,9 +423,20 @@
                         <li>✅ Resolução de problemas sem complicação</li>
                         <li>✅ Exercícios práticos focados no edital</li>
                     </ul>
-                    <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
-                    <span class="price-value">R$ 49,90</span>
-                    <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                    
+                    <div class="purchase-options">
+                        <div class="option-upgrade">
+                            <span class="badge-upgrade">OFERTA ESPECIAL</span>
+                            <span style="font-size: 0.85em; color: #92400e; font-weight: bold; display: block; margin-bottom: 5px;">Apostila + Guia de Estudos + Caderno de Erros</span>
+                            <span class="price">R$ 67,89</span>
+                            <a href="#" class="btn-full">COMPRAR APOSTILA + GUIA</a>
+                        </div>
+                        <div class="option-basic">
+                            <span style="font-size: 0.85em; color: #64748b; display: block; margin-bottom: 5px;">Apenas a Apostila (Sem os Bônus)</span>
+                            <span class="price">R$ 49,90</span>
+                            <a href="#" class="btn-outline">COMPRAR APENAS APOSTILA</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -412,9 +458,20 @@
                         <li>✅ Geopolítica, Cerrado e Fatos do Mundo</li>
                         <li>✅ Foco total no Edital 01/2026</li>
                     </ul>
-                    <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
-                    <span class="price-value">R$ 49,90</span>
-                    <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                    
+                    <div class="purchase-options">
+                        <div class="option-upgrade">
+                            <span class="badge-upgrade">OFERTA ESPECIAL</span>
+                            <span style="font-size: 0.85em; color: #92400e; font-weight: bold; display: block; margin-bottom: 5px;">Apostila + Guia de Estudos + Caderno de Erros</span>
+                            <span class="price">R$ 67,89</span>
+                            <a href="#" class="btn-full">COMPRAR APOSTILA + GUIA</a>
+                        </div>
+                        <div class="option-basic">
+                            <span style="font-size: 0.85em; color: #64748b; display: block; margin-bottom: 5px;">Apenas a Apostila (Sem os Bônus)</span>
+                            <span class="price">R$ 49,90</span>
+                            <a href="#" class="btn-outline">COMPRAR APENAS APOSTILA</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -436,9 +493,20 @@
                         <li>✅ Estatuto dos Servidores e Lei de Licitações</li>
                         <li>✅ Questões práticas e alertas de pegadinhas</li>
                     </ul>
-                    <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
-                    <span class="price-value">R$ 49,90</span>
-                    <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                    
+                    <div class="purchase-options">
+                        <div class="option-upgrade">
+                            <span class="badge-upgrade">OFERTA ESPECIAL</span>
+                            <span style="font-size: 0.85em; color: #92400e; font-weight: bold; display: block; margin-bottom: 5px;">Apostila + Guia de Estudos + Caderno de Erros</span>
+                            <span class="price">R$ 67,89</span>
+                            <a href="#" class="btn-full">COMPRAR APOSTILA + GUIA</a>
+                        </div>
+                        <div class="option-basic">
+                            <span style="font-size: 0.85em; color: #64748b; display: block; margin-bottom: 5px;">Apenas a Apostila (Sem os Bônus)</span>
+                            <span class="price">R$ 49,90</span>
+                            <a href="#" class="btn-outline">COMPRAR APENAS APOSTILA</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -472,9 +540,20 @@
                             <li>✅ BNCC focada nos Anos Iniciais do Ensino Fundamental</li>
                             <li>✅ Metodologia exclusiva Profª Cíntia</li>
                         </ul>
-                        <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
-                        <span class="price-value">R$ 68,90</span>
-                        <a href="#" class="cta-button">COMPRAR APOSTILA</a>
+                        
+                        <div class="purchase-options">
+                            <div class="option-upgrade">
+                                <span class="badge-upgrade">OFERTA ESPECIAL</span>
+                                <span style="font-size: 0.85em; color: #92400e; font-weight: bold; display: block; margin-bottom: 5px;">Apostila + Guia de Estudos + Caderno de Erros</span>
+                                <span class="price">R$ 86,89</span>
+                                <a href="#" class="btn-full">COMPRAR APOSTILA + GUIA</a>
+                            </div>
+                            <div class="option-basic">
+                                <span style="font-size: 0.85em; color: #64748b; display: block; margin-bottom: 5px;">Apenas a Apostila (Sem os Bônus)</span>
+                                <span class="price">R$ 68,90</span>
+                                <a href="#" class="btn-outline">COMPRAR APENAS APOSTILA</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -495,9 +574,20 @@
                             <li>✅ Eixos Estruturantes, Educar e Cuidar</li>
                             <li>✅ BNCC focada na Educação Infantil</li>
                         </ul>
-                        <div class="bonus-alert">⚠️ <strong>Atenção:</strong> Na próxima página, você pode adicionar o nosso <strong>Caderno de Erros + Guia de Estudos</strong> por apenas R$ 17,99!</div>
-                        <span class="price-value">R$ 68,90</span>
-                        <a href="https://pay.hotmart.com/L106284011B?off=9xdq5d3c" class="cta-button">COMPRAR APOSTILA</a>
+                        
+                        <div class="purchase-options">
+                            <div class="option-upgrade">
+                                <span class="badge-upgrade">OFERTA ESPECIAL</span>
+                                <span style="font-size: 0.85em; color: #92400e; font-weight: bold; display: block; margin-bottom: 5px;">Apostila + Guia de Estudos + Caderno de Erros</span>
+                                <span class="price">R$ 86,89</span>
+                                <a href="https://pay.hotmart.com/L106284011B?off=p6e6od2n" class="btn-full">COMPRAR APOSTILA + GUIA</a>
+                            </div>
+                            <div class="option-basic">
+                                <span style="font-size: 0.85em; color: #64748b; display: block; margin-bottom: 5px;">Apenas a Apostila (Sem os Bônus)</span>
+                                <span class="price">R$ 68,90</span>
+                                <a href="https://pay.hotmart.com/L106284011B?off=9xdq5d3c" class="btn-outline">COMPRAR APENAS APOSTILA</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
