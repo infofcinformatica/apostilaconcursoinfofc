@@ -24,7 +24,6 @@
     <title>Concurso IBGE 2026 - Preparação Definitiva | InfoFC</title>
     <meta property="og:title" content="Concurso IBGE 2026 - Material Focado na Banca IBFC">
     <meta property="og:description" content="Prepare-se para o IBGE com quem entende! Teoria esquematizada, questões IBFC comentadas e guias exclusivos.">
-    <!-- Atualize o link da imagem quando hospedar -->
     <meta property="og:image" content="watermarked_img_6126160685121483321.png">
     <meta property="og:url" content="#precos">
     <meta property="og:type" content="website">
@@ -104,13 +103,13 @@
         .tab-btn {
             background: white;
             border: 2px solid #cbd5e1;
-            padding: 14px 24px;
+            padding: 14px 20px;
             border-radius: 30px;
             cursor: pointer;
             font-weight: bold;
             color: var(--text);
             transition: all 0.3s ease;
-            font-size: 1em;
+            font-size: 0.95em;
             text-transform: uppercase;
         }
         .tab-btn:hover {
@@ -292,10 +291,11 @@
 
     <!-- NAVEGAÇÃO DAS ABAS PRINCIPAIS -->
     <div class="tabs-nav">
-        <button class="tab-btn active" onclick="openTab(event, 'tab-acs')">ACS (Supervisor)</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab-acr')">ACR (Regional)</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab-aor')">AOR (Operacional)</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab-aca-aci')">ACA / ACI (Adm e Info)</button>
+        <button class="tab-btn active" onclick="openTab(event, 'tab-acs')">Agente Censitário Supervisor</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-acr')">Agente Censitário Regional</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-aor')">Agente Operacional Regional</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-aca')">Agente Censitário Administrativo</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-aci')">Agente Censitário de Informática</button>
     </div>
 
     <!-- CONTEÚDO DAS ABAS -->
@@ -417,39 +417,74 @@
         </div>
     </div>
 
-    <!-- 4. ACA / ACI -->
-    <div id="tab-aca-aci" class="tab-pane">
+    <!-- 4. ACA -->
+    <div id="tab-aca" class="tab-pane">
         <div class="pricing-wrapper">
             <div class="price-box">
                 <div class="product-image-container">
-                    <img src="watermarked_img_6126160685121483321.png" alt="Material Agente Administrativo e Informática">
+                    <img src="watermarked_img_6126160685121483321.png" alt="Material Agente Censitário Administrativo">
                 </div>
                 
                 <div class="product-details-container">
-                    <span class="badge-secondary">VAGAS ESTRATÉGICAS DE APOIO</span>
-                    <h3>Agentes Administrativo (ACA) ou Informática (ACI)</h3>
-                    <p style="color: #64748b; font-size: 0.95em;">Remuneração: R$ 2.128,00 | Exige apenas Ensino Médio completo.</p>
-                    <div class="bonus-free">
-                        <strong>Atenção:</strong> Após a compra, você receberá a apostila exata contendo o eixo específico do seu cargo (Administração ou Informática Avançada).
-                    </div>
+                    <span class="badge-secondary">VAGA ESTRATÉGICA DE APOIO</span>
+                    <h3>Agente Censitário Administrativo (ACA)</h3>
+                    <p style="color: #64748b; font-size: 0.95em;">Remuneração: R$ 2.128,00 | Exige Ensino Médio completo.</p>
                     <ul>
                         <li>✅ Base forte em Português e Raciocínio Lógico</li>
-                        <li>✅ Teoria direto ao ponto no seu eixo de conhecimento</li>
+                        <li>✅ Teoria direta de Noções de Administração (Qualidade, Atendimento e Arquivologia)</li>
                         <li>✅ Baterias de questões comentadas padrão IBFC</li>
                     </ul>
                     
                     <div class="purchase-options">
                         <div class="option-upgrade">
                             <span class="badge-upgrade">🏆 O MAPA DA APROVAÇÃO</span>
-                            <span style="font-size: 0.95em; color: var(--secondary); font-weight: bold; display: block; margin-bottom: 5px;">Apostila Completa (ACA/ACI) + Guia de Estudos + Caderno de Erros</span>
+                            <span style="font-size: 0.95em; color: var(--secondary); font-weight: bold; display: block; margin-bottom: 5px;">Apostila Completa + Guia de Estudos (14 Semanas) + Caderno de Erros</span>
                             <span class="price">R$ 116,90</span>
-                            <!-- Link de Checkout Combo ACA/ACI -->
+                            <!-- Link de Checkout Combo ACA -->
                             <a href="#" class="btn-full">QUERO O COMBO COMPLETO</a>
                         </div>
                         <div class="option-basic">
                             <span style="font-size: 0.9em; color: #64748b; display: block;">Apenas a Apostila (Sem os Bônus de Planejamento)</span>
                             <span class="price">R$ 97,00</span>
-                            <!-- Link de Checkout Apostila ACA/ACI -->
+                            <!-- Link de Checkout Apostila ACA -->
+                            <a href="#" class="btn-outline">COMPRAR APENAS APOSTILA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. ACI -->
+    <div id="tab-aci" class="tab-pane">
+        <div class="pricing-wrapper">
+            <div class="price-box">
+                <div class="product-image-container">
+                    <img src="watermarked_img_6126160685121483321.png" alt="Material Agente Censitário de Informática">
+                </div>
+                
+                <div class="product-details-container">
+                    <span class="badge-secondary">SUPORTE TÉCNICO VITAL</span>
+                    <h3>Agente Censitário de Informática (ACI)</h3>
+                    <p style="color: #64748b; font-size: 0.95em;">Remuneração: R$ 2.128,00 | Exige Ensino Médio completo.</p>
+                    <ul>
+                        <li>✅ Base forte em Português e Raciocínio Lógico</li>
+                        <li>✅ Teoria focada em Informática (Hardware, Windows, Redes e Segurança)</li>
+                        <li>✅ Baterias de questões comentadas padrão IBFC</li>
+                    </ul>
+                    
+                    <div class="purchase-options">
+                        <div class="option-upgrade">
+                            <span class="badge-upgrade">🏆 O MAPA DA APROVAÇÃO</span>
+                            <span style="font-size: 0.95em; color: var(--secondary); font-weight: bold; display: block; margin-bottom: 5px;">Apostila Completa + Guia de Estudos (14 Semanas) + Caderno de Erros</span>
+                            <span class="price">R$ 116,90</span>
+                            <!-- Link de Checkout Combo ACI -->
+                            <a href="#" class="btn-full">QUERO O COMBO COMPLETO</a>
+                        </div>
+                        <div class="option-basic">
+                            <span style="font-size: 0.9em; color: #64748b; display: block;">Apenas a Apostila (Sem os Bônus de Planejamento)</span>
+                            <span class="price">R$ 97,00</span>
+                            <!-- Link de Checkout Apostila ACI -->
                             <a href="#" class="btn-outline">COMPRAR APENAS APOSTILA</a>
                         </div>
                     </div>
@@ -563,7 +598,7 @@
         }
 
         if (!numeroVendas) {
-            numeroVendas = getRandomInt(45, 112); // Números maiores pois IBGE é nacional
+            numeroVendas = getRandomInt(45, 112); 
             localStorage.setItem(KEY_STORAGE, JSON.stringify({
                 value: numeroVendas,
                 timestamp: agora
