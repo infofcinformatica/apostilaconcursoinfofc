@@ -1,527 +1,586 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'SEU_PIXEL_AQUI'); /* Insira o Pixel correto da campanha do IBGE */
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=SEU_PIXEL_AQUI&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preparação Definitiva IBGE 2026 - InfoFC</title>
+    <title>Concurso IBGE 2026 - Preparação Definitiva | InfoFC</title>
+    <meta property="og:title" content="Concurso IBGE 2026 - Material Focado na Banca IBFC">
+    <meta property="og:description" content="Prepare-se para o IBGE com quem entende! Teoria esquematizada, questões IBFC comentadas e guias exclusivos.">
+    <!-- Atualize o link da imagem quando hospedar -->
+    <meta property="og:image" content="watermarked_img_6126160685121483321.png">
+    <meta property="og:url" content="#precos">
+    <meta property="og:type" content="website">
+    
+    <meta name="description" content="Material completo para o concurso do IBGE 2026 com o Núcleo de Aprendizagem InfoFC.">
+    
     <style>
-        :root {
-            --bg-dark: #0a0f1d;
-            --bg-card: #111827;
-            --primary: #e50914;
-            --primary-hover: #b80710;
-            --text-main: #ffffff;
-            --text-muted: #9ca3af;
-            --accent-blue: #00d2ff;
-            --accent-green: #00ff87;
+        html {
+            scroll-behavior: smooth;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* Paleta ajustada para a identidade visual Cyberpunk (Azul muito escuro, Vermelho e Branco) */
+        :root { 
+            --primary: #0a0f1d; 
+            --secondary: #111827; 
+            --accent: #e50914; 
+            --accent-hover: #b80710; 
+            --highlight: #10b981; /* Verde para botões de compra */
+            --highlight-hover: #059669;
+            --light: #f8fafc; 
+            --text: #334155; 
         }
+        
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--light); color: var(--text); line-height: 1.6; }
+        
+        header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 60px 20px; text-align: center; border-bottom: 4px solid var(--accent); }
+        
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        
+        .badge { background: var(--accent); color: #fff; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px;}
+        .badge-secondary { background: var(--secondary); color: #fff; padding: 4px 12px; border-radius: 15px; font-weight: bold; font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 10px; border: 1px solid #334155;}
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
+        h1 { font-size: 2.5em; margin: 15px 0; line-height: 1.2; color: #fff; }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Hero Header */
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(180deg, rgba(17,24,39,1) 0%, rgba(10,15,29,1) 100%);
-            border-bottom: 2px solid #1f2937;
-        }
-
-        .main-title {
-            font-size: 2.8rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            text-shadow: 0px 4px 10px rgba(0,0,0,0.5);
-        }
-
-        .subtitle {
-            font-size: 1.4rem;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-        }
-
-        .cover-img {
-            max-width: 450px;
-            width: 100%;
+        .header-logo {
+            max-width: 100%;
+            width: 250px;
             height: auto;
-            border-radius: 12px;
-            box-shadow: 0px 10px 30px rgba(229, 9, 20, 0.2);
-            border: 1px solid #374151;
-            margin-bottom: 20px;
+            margin: 15px 0 25px 0;
+            display: inline-block;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
         }
-
-        /* Alerta Crítico */
-        .alert-box {
-            background-color: rgba(229, 9, 20, 0.1);
-            border-left: 5px solid var(--primary);
-            padding: 15px 20px;
-            border-radius: 4px;
-            margin: 30px 0;
+        
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
             text-align: left;
         }
+        
+        /* BOTÕES SIMPLES E DOS COMBOS */
+        .cta-button { display: flex; justify-content: center; align-items: center; text-align: center; background: var(--accent); color: white; padding: 18px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2em; margin-top: 20px; cursor: pointer; border: none; transition: 0.3s; width: 100%; box-sizing: border-box; text-transform: uppercase; box-shadow: 0 4px 6px rgba(229, 9, 20, 0.3);}
+        .cta-button:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 12px rgba(229, 9, 20, 0.4);}
+        
+        /* DESIGN: BOTÕES DUPLOS (APOSTILA VS. APOSTILA+GUIA) */
+        .purchase-options { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        
+        .option-basic { border: 2px solid #e2e8f0; padding: 15px; border-radius: 8px; text-align: center; background: #fff; }
+        .option-basic .price { font-size: 1.8em; font-weight: bold; color: var(--secondary); display: block; margin: 5px 0;}
+        .option-basic .btn-outline { background: transparent; color: var(--secondary); border: 2px solid var(--secondary); padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; display: block; margin-top: 10px; transition: 0.3s; text-transform: uppercase; font-size: 0.95em;}
+        .option-basic .btn-outline:hover { background: var(--secondary); color: white; }
 
-        .alert-box strong {
-            color: var(--primary);
-        }
+        .option-upgrade { background: #fff; border: 3px solid var(--highlight); padding: 25px 15px 20px 15px; border-radius: 8px; text-align: center; position: relative; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);}
+        .option-upgrade .badge-upgrade { background: var(--highlight); color: white; font-size: 0.8em; padding: 4px 12px; border-radius: 12px; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); font-weight: bold; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.2); text-transform: uppercase; letter-spacing: 1px;}
+        .option-upgrade .price { font-size: 2.2em; font-weight: bold; color: var(--highlight); display: block; margin: 5px 0; line-height: 1;}
+        .option-upgrade .btn-full { background: var(--highlight); color: white; padding: 16px; border-radius: 6px; text-decoration: none; font-weight: bold; display: block; margin-top: 10px; transition: 0.3s; text-transform: uppercase; font-size: 1.1em; border: none; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);}
+        .option-upgrade .btn-full:hover { background: var(--highlight-hover); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(16, 185, 129, 0.4);}
 
-        /* Seção do Vídeo */
-        .video-section {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .video-container {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            cursor: pointer;
-        }
-
-        .video-thumbnail {
-            width: 100%;
-            border-radius: 12px;
-            border: 2px solid #27272a;
-            box-shadow: 0px 10px 20px rgba(0,0,0,0.6);
-            transition: transform 0.3s ease;
-        }
-
-        .video-thumbnail:hover {
-            transform: scale(1.01);
-        }
-
-        /* Sistema de Abas (Tabs) */
-        .tabs-container {
-            margin: 50px 0;
-        }
-
-        .tabs-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
-
-        .tabs {
+        /* SISTEMA DE ABAS PARA OS CARGOS */
+        .tabs-nav {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            gap: 10px;
+            margin: 40px 0 30px 0;
         }
-
-        .tabs label {
-            padding: 15px 25px;
-            background: #1f2937;
-            font-weight: bold;
+        .tab-btn {
+            background: white;
+            border: 2px solid #cbd5e1;
+            padding: 14px 24px;
+            border-radius: 30px;
             cursor: pointer;
-            border-radius: 8px 8px 0 0;
-            margin: 0 4px;
+            font-weight: bold;
+            color: var(--text);
             transition: all 0.3s ease;
-            border: 1px solid #374151;
-            border-bottom: none;
+            font-size: 1em;
+            text-transform: uppercase;
         }
-
-        .tabs .tab-content {
-            width: 100%;
-            padding: 30px;
-            background: var(--bg-card);
-            order: 1;
-            display: none;
-            border-radius: 12px;
-            border: 1px solid #374151;
-            box-shadow: 0px 10px 25px rgba(0,0,0,0.4);
+        .tab-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
         }
-
-        .tabs input[type="radio"] {
-            display: none;
-        }
-
-        /* Lógica das Abas Ativas */
-        #tab1:checked + label, #tab2:checked + label, #tab3:checked + label, #tab4:checked + label {
-            background: var(--primary);
+        .tab-btn.active {
+            background: var(--accent);
             color: white;
-            border-color: var(--primary);
+            border-color: var(--accent);
+            box-shadow: 0 4px 10px rgba(229, 9, 20, 0.3);
         }
 
-        #tab1:checked ~ #content1,
-        #tab2:checked ~ #content2,
-        #tab3:checked ~ #content3,
-        #tab4:checked ~ #content4 {
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .tab-pane.active {
             display: block;
         }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-        /* Tabelas de Precificação Estruturadas */
-        .price-table {
+        /* CAIXAS DE PREÇO */
+        .pricing-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+        .price-box { 
+            background: white; 
+            border: 2px solid #e2e8f0; 
+            padding: 40px; 
+            border-radius: 15px; 
+            text-align: left; 
+            max-width: 900px; 
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #0d1321;
-            border-radius: 8px;
+            position: relative; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            display: flex; 
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .product-image-container {
+            flex: 0 0 300px; 
+            text-align: center;
+        }
+        .product-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3));
+        }
+
+        .product-details-container {
+            flex: 1; 
+        }
+
+        .price-box h3 { font-size: 1.8em; color: var(--primary); margin: 10px 0;}
+        .price-box ul { text-align: left; padding: 0; list-style: none; margin: 20px 0; color: #475569;}
+        .price-box li { margin-bottom: 12px; font-size: 1em; }
+        .bonus-free { background: #fef2f2; border: 1px dashed var(--accent); padding: 12px; border-radius: 8px; color: var(--accent-hover); font-size: 0.9em; margin-top: 15px; margin-bottom: 20px; font-weight: bold;}
+
+        /* SEÇÃO DE VÍDEO */
+        .video-section { background: #e2e8f0; padding: 60px 20px; border-bottom: 1px solid #cbd5e1; text-align: center;}
+        
+        .video-wrapper {
+            position: relative;
+            max-width: 900px; 
+            margin: 0 auto; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border-radius: 12px;
+            background: #000; 
             overflow: hidden;
-            border: 1px solid #2d3748;
         }
-
-        .price-table th {
-            background-color: #1a202c;
-            color: var(--text-main);
-            text-align: left;
-            padding: 15px 20px;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-bottom: 2px solid #2d3748;
-        }
-
-        .price-table td {
-            padding: 20px;
-            border-bottom: 1px solid #2d3748;
-            vertical-align: middle;
-        }
-
-        .price-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .td-features ul {
-            list-style: none;
-        }
-
-        .td-features li {
-            margin-bottom: 6px;
-            font-size: 0.95rem;
-        }
-
-        .td-features li::before {
-            content: "✓ ";
-            color: var(--accent-green);
-            font-weight: bold;
-        }
-
-        .price-tag {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--accent-green);
-            white-space: nowrap;
-        }
-
-        /* Botões de Checkout */
-        .btn-buy {
-            display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            text-decoration: none;
-            padding: 12px 25px;
-            font-weight: bold;
-            border-radius: 6px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            text-align: center;
-            box-shadow: 0px 4px 15px rgba(229, 9, 20, 0.4);
+        .video-wrapper img {
             width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .video-wrapper img:hover {
+            transform: scale(1.02);
         }
 
-        .btn-buy:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-        }
+        /* PROFESSORES */
+        .profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .profile-card { background: white; border: 2px solid #e2e8f0; border-radius: 15px; padding: 30px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .profile-photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent); margin-bottom: 20px; padding: 3px; }
+        .profile-role { color: var(--accent); font-weight: bold; font-size: 0.9em; text-transform: uppercase; margin-bottom: 10px; display: block; }
 
-        .badge-guide {
-            background-color: rgba(0, 210, 255, 0.2);
-            color: var(--accent-blue);
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 5px;
-        }
+        footer { text-align: center; padding: 40px; background: #0f172a; color: #94a3b8; margin-top: 50px; }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            border-top: 2px solid #1f2937;
-            margin-top: 6px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
+        /* NOTIFICAÇÃO E FLOATING */
+        .sales-toast { position: fixed; bottom: 20px; left: 50%; background: #0f172a; color: white; padding: 15px 20px; border-radius: 12px; display: flex; align-items: center; gap: 15px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.4); z-index: 1000; max-width: 350px; opacity: 0; transform: translateY(50px); transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); pointer-events: none; border-left: 4px solid var(--accent);}
+        .sales-toast.show { opacity: 1; transform: translate(-50%, 0); pointer-events: all; }
+        .toast-icon { font-size: 1.5em; background: #1e293b; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid #334155; }
+        .toast-content p { margin: 0; font-size: 0.9em; }
+        .toast-title { font-weight: bold; }
+        .toast-close { background: none; border: none; color: #94a3b8; font-size: 1.5em; cursor: pointer; padding: 0 0 0 10px; }
 
+        .floating-logo { position: fixed; bottom: 30px; right: 30px; z-index: 1000; width: 65px; height: 65px; background: #25D366; border-radius: 50%; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); display: flex; align-items: center; justify-content: center; transition: transform 0.3s; text-decoration: none; color: white; font-size: 35px;}
+        .floating-logo:hover { transform: scale(1.1); }
+
+        /* RESPONSIVIDADE */
         @media (max-width: 768px) {
-            .tabs label {
-                width: 100%;
-                border-radius: 8px;
-                margin: 5px 0;
-                border-bottom: 1px solid #374151;
-            }
-            .price-table, .price-table tbody, .price-table tr, .price-table td, .price-table th {
-                display: block;
-                width: 100%;
-            }
-            .price-table th {
+            .header-flex { flex-direction: column-reverse; text-align: center; }
+            
+            .price-box {
+                flex-direction: column;
                 text-align: center;
+                padding: 20px;
+                gap: 20px;
             }
-            .price-table td {
-                text-align: center;
-                border-bottom: 1px solid #2d3748;
+            .product-image-container {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 250px;
             }
-            .price-table td:last-child {
-                border-bottom: none;
-            }
-            .td-features text-align {
+            .price-box ul {
                 text-align: left;
+                display: inline-block;
             }
+            
+            .tabs-nav { flex-direction: column; padding: 0 20px; }
+            .tab-btn { width: 100%; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1 class="main-title">Cronograma & Guia de Estudos</h1>
-            <p class="subtitle">Processo Seletivo Simplificado IBGE 2026</p>
-            <img src="watermarked_img_6126160685121483321.png" alt="Capa Guia de Estudos IBGE" class="cover-img">
-        </div>
-    </header>
-
-    <main class="container">
-        
-        <!-- Alerta de Informações Críticas -->
-        <div class="alert-box">
-            <p>🚨 <strong>INFORMAÇÃO CRÍTICA DO EDITAL 01/2026:</strong> A prova de 60 questões acontecerá no dia <strong>27/09/2026</strong> no período da tarde. Para ser considerado aprovado, você precisa atingir o mínimo de 18 pontos totais e <strong>NÃO PODE ZERAR</strong> nenhuma matéria (mínimo de 1 acerto por disciplina). Não jogue sua inscrição fora por falta de estratégia!</p>
-        </div>
-
-        <!-- Seção de Vídeo -->
-        <section class="video-section">
-            <h2 style="margin-bottom: 20px; text-transform: uppercase;">Entenda a Estratégia por trás do Material</h2>
-            <div class="video-container">
-                <!-- Substitua o '#' pelo link do seu vídeo do YouTube ou Vimeo se desejar mapear um clique real -->
-                <a href="#" target="_blank">
-                    <img src="watermarked_img_15903346175311587828.png" alt="Assista ao vídeo explicativo" class="video-thumbnail">
-                </a>
-            </div>
-        </section>
-
-        <!-- Seção das Apostilas por Cargo (Abas + Tabelas) -->
-        <section class="tabs-container">
-            <h2 class="tabs-title">Escolha o seu Cargo e Defina seu Plano</h2>
+<header>
+    <div class="container">
+        <div class="header-flex">
             
-            <div class="tabs">
-                
-                <!-- ABA 1: ACS -->
-                <input type="radio" name="role-tabs" id="tab1" checked>
-                <label for="tab1">ACS (Supervisor)</label>
-                <div class="tab-content" id="content1">
-                    <h3>Agente Censitário Supervisor (ACS)</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">Remuneração: R$ 3.480,00 | Exige Ensino Médio e CNH B. O maior número de vagas do certame!</p>
-                    
-                    <table class="price-table">
-                        <thead>
-                            <tr>
-                                <th>Conteúdo Incluso</th>
-                                <th>Preço</th>
-                                <th>Ação</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="td-features">
-                                    <strong>Apostila Preparatória Completa (ACS)</strong>
-                                    <ul>
-                                        <li>Teoria direcionada de Português e RLM</li>
-                                        <li>Noções de Administração / Situações Gerenciais</li>
-                                        <li>Conhecimentos Técnicos e Censitários Oficiais</li>
-                                        <li>Questões gabaritadas e comentadas da banca IBFC</li>
-                                    </ul>
-                                </td>
-                                <td><div class="price-tag">R$ 97,00</div></td>
-                                <!-- Cole o link do checkout da apostila avulsa no href -->
-                                <td><a href="#" class="btn-buy">Comprar Apostila</a></td>
-                            </tr>
-                            <tr>
-                                <td class="td-features">
-                                    <strong>Apostila Completa + Combo Reta Final</strong>
-                                    <span class="badge-guide">RECOMENDADO</span>
-                                    <ul>
-                                        <li>Todos os itens da apostila teórica completa</li>
-                                        <li><strong>Guia de Estudos Exclusivo:</strong> Cronograma ativo de 14 semanas</li>
-                                        <li>Metodologia dos 3 Passos (Mapeamento Crítico)</li>
-                                        <li><strong>Caderno de Erros Estruturado</strong> para preenchimento</li>
-                                    </ul>
-                                </td>
-                                <td><div class="price-tag">R$ 120,00</div></td>
-                                <!-- Cole o link do checkout do combo no href -->
-                                <td><a href="#" class="btn-buy" style="background-color: var(--accent-green); color: #000; box-shadow: 0px 4px 15px rgba(0,255,135,0.3);">Comprar Combo</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- ABA 2: ACR -->
-                <input type="radio" name="role-tabs" id="tab2">
-                <label for="tab2">ACR (Regional)</label>
-                <div class="tab-content" id="content2">
-                    <h3>Agente Censitário Regional (ACR)</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">Remuneração: R$ 4.008,00 | Exige Ensino Médio e CNH B. O topo da pirâmide salarial de nível médio!</p>
-                    
-                    <table class="price-table">
-                        <thead>
-                            <tr>
-                                <th>Conteúdo Incluso</th>
-                                <th>Preço</th>
-                                <th>Ação</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="td-features">
-                                    <strong>Apostila Preparatória Completa (ACR)</strong>
-                                    <ul>
-                                        <li>Teoria focada em Português e RLM</li>
-                                        <li>Noções de Administração e Situações Gerenciais específicas</li>
-                                        <li>Conhecimentos Técnicos do Censo Agropecuário 2026</li>
-                                        <li>Simulados práticos com o padrão de cobrança IBFC</li>
-                                    </ul>
-                                </td>
-                                <td><div class="price-tag">R$ 97,00</div></td>
-                                <td><a href="#" class="btn-buy">Comprar Apostila</a></td>
-                            </tr>
-                            <tr>
-                                <td class="td-features">
-                                    <strong>Apostila Completa + Combo Reta Final</strong>
-                                    <span class="badge-guide">RECOMENDADO</span>
-                                    <ul>
-                                        <li>Todos os itens da apostila teórica completa de ACR</li>
-                                        <li><strong>Guia de Estudos de Liderança:</strong> 14 semanas esquematizadas</li>
-                                        <li>Sistema de Mapeamento de Status de Conteúdo</li>
-                                        <li><strong>Caderno de Erros Exclusivo</strong> (Impressão e Preenchimento)</li>
-                                    </ul>
-                                </td>
-                                <td><div class="price-tag">R$ 120,00</div></td>
-                                <td><a href="#" class="btn-buy" style="background-color: var(--accent-green); color: #000; box-shadow: 0px 4px 15px rgba(0,255,135,0.3);">Comprar Combo</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- ABA 3: AOR -->
-                <input type="radio" name="role-tabs" id="tab3">
-                <label for="tab3">AOR (Operacional)</label>
-                <div class="tab-content" id="content3">
-                    <h3>Agente Operacional Regional (AOR)</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">Remuneração: R$ 4.008,00 | Exige Ensino Médio e CNH B. Foco na gestão interna do Posto Censitário!</p>
-                    
-                    <table class="price-table">
-                        <thead>
-                            <tr>
-                                <th>Conteúdo Incluso</th>
-                                <th>Preço</th>
-                                <th>Ação</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="td-features">
-                                    <strong>Apostila Preparatória Completa (AOR)</strong>
-                                    <ul>
-                                        <li>Teoria direta de Língua Portuguesa e RLM</li>
-                                        <li>Noções de Administração / Situações Gerenciais da IBFC</li>
-                                        <li>Noções Básicas de Informática (Windows, Word, Excel e Redes)</li>
-                                        <li>Questões gabaritadas de concursos anteriores da banca</li>
-                                    </ul>
-                                </td>
-                                <td><div class="price-tag">R$ 97,00</div></td>
-                                <td><a href="#" class="btn-buy">Comprar Apostila</a></td>
-                            </tr>
-                            <tr>
-                                <td class="td-features">
-                                    <strong>Apostila Completa + Combo Reta Final</strong>
-                                    <span class="badge-guide">RECOMENDADO</span>
-                                    <ul>
-                                        <li>Todos os itens da apostila teórica focada de AOR</li>
-                                        <li><strong>Guia de Estudos de Rotina:</strong> Roteiro de 14 semanas</li>
-                                        <li>Método de checagem inteligente de rendimento</li>
-                                        <li><strong>Caderno de Erros Técnico</strong> para revisão na véspera</li>
-                                    </ul>
-                                </td>
-                                <td><div class="price-tag">R$ 120,00</div></td>
-                                <td><a href="#" class="btn-buy" style="background-color: var(--accent-green); color: #000; box-shadow: 0px 4px 15px rgba(0,255,135,0.3);">Comprar Combo</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- ABA 4: ACA / ACI -->
-                <input type="radio" name="role-tabs" id="tab4">
-                <label for="tab4">ACA & ACI (Adm/Info)</label>
-                <div class="tab-content" id="content4">
-                    <h3>Agente Censitário Administrativo (ACA) & Informática (ACI)</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">Remuneração: R$ 2.128,00 | Exige Ensino Médio completo. Vagas administrativas estratégicas!</p>
-                    
-                    <table class="price-table">
-                        <thead>
-                            <tr>
-                                <th>Conteúdo Incluso</th>
-                                <th>Preço</th>
-                                <th>Ação</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="td-features">
-                                    <strong>Apostila Preparatória Completa (ACA ou ACI)</strong>
-                                    <ul>
-                                        <li>Teoria completa de Português e RLM padrão IBFC</li>
-                                        <li>Noções de Administração Geral (Para cargo ACA)</li>
-                                        <li>Noções Avançadas de Informática e Suporte (Para cargo ACI)</li>
-                                        <li>Baterias de questões comentadas por eixos do edital</li>
-                                    </ul>
-                                </td>
-                                <td><div class="price-tag">R$ 97,00</div></td>
-                                <td><a href="#" class="btn-buy">Comprar Apostila</a></td>
-                            </tr>
-                            <tr>
-                                <td class="td-features">
-                                    <strong>Apostila Completa + Combo Reta Final</strong>
-                                    <span class="badge-guide">RECOMENDADO</span>
-                                    <ul>
-                                        <li>Apostila teórica completa de acordo com o cargo escolhido</li>
-                                        <li><strong>Guia de Estudos Direcionado:</strong> Roteiro completo de 14 semanas</li>
-                                        <li>Sistema InfoFC de mapeamento crítico de erros</li>
-                                        <li><strong>Caderno de Erros exclusivo</strong> para fixação de pegadinhas</li>
-                                    </ul>
-                                </td>
-                                <td><div class="price-tag">R$ 120,00</div></td>
-                                <td><a href="#" class="btn-buy" style="background-color: var(--accent-green); color: #000; box-shadow: 0px 4px 15px rgba(0,255,135,0.3);">Comprar Combo</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
+            <div class="header-image">
+                 <img src="watermarked_img_6126160685121483321.png" alt="Guia de Estudos IBGE InfoFC" style="width: 100%; max-width: 400px; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6)); border-radius: 12px; border: 1px solid #334155;">
             </div>
-        </section>
 
-    </main>
+            <div class="header-text">
+                <span class="badge">Focado no Edital 01/2026 (IBFC)</span>
+                <br>
+                <h1 style="font-size: 3em;">Aprovação no Concurso do IBGE 2026</h1>
+                <p style="font-size: 1.2em; margin-bottom: 20px; color: #cbd5e1;">
+                    Chega de estudar por materiais genéricos ou desatualizados. Domine o edital com a metodologia esquematizada e as questões comentadas do <strong>Núcleo de Aprendizagem InfoFC</strong>.
+                </p>
+                
+                <a href="#precos" class="cta-button">VER MATERIAIS E PREÇOS</a>
+            </div>
 
-    <footer>
-        <p>&copy; 2026 Núcleo de Aprendizagem InfoFC. Todos os direitos reservados.</p>
-        <p style="font-size: 0.8rem; margin-top: 5px;">Este material é uma produção independente e não possui vínculo direto de parceria com o Instituto Brasileiro de Geografia e Estatística (IBGE).</p>
-    </footer>
+        </div>
+    </div>
+</header>
+
+<!-- SEÇÃO DE VÍDEO -->
+<section class="video-section">
+    <div class="container">
+        <h2 style="color: var(--primary); margin-bottom: 10px; font-size: 2.2em;">Entenda nossa Metodologia para o IBGE</h2>
+        <p style="color: #475569; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; font-size: 1.1em;">
+            Clique na imagem abaixo para assistir à explicação de como estruturamos nosso material para garantir que você não zere nenhuma matéria e conquiste sua vaga.
+        </p>
+
+        <div class="video-wrapper">
+            <a href="#precos">
+                <img src="watermarked_img_15903346175311587828.png" alt="Apresentação Apostilas IBGE InfoFC">
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- SEÇÃO DE PREÇOS COM ABAS E CAIXAS -->
+<div class="container" id="precos" style="padding-top: 60px; padding-bottom: 60px;">
+    
+    <h2 style="text-align: center; color: var(--primary); margin-bottom: 10px; font-size: 2.5em;">Escolha o seu Cargo</h2>
+    <p style="text-align: center; color: #64748b; margin-bottom: 30px; font-size: 1.1em;">Selecione a aba correspondente ao seu cargo no IBGE para ver o material específico.</p>
+
+    <!-- NAVEGAÇÃO DAS ABAS PRINCIPAIS -->
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="openTab(event, 'tab-acs')">ACS (Supervisor)</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-acr')">ACR (Regional)</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-aor')">AOR (Operacional)</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-aca-aci')">ACA / ACI (Adm e Info)</button>
+    </div>
+
+    <!-- CONTEÚDO DAS ABAS -->
+    
+    <!-- 1. ACS -->
+    <div id="tab-acs" class="tab-pane active">
+        <div class="pricing-wrapper">
+            <div class="price-box">
+                <div class="product-image-container">
+                    <img src="watermarked_img_6126160685121483321.png" alt="Material Agente Censitário Supervisor">
+                </div>
+                
+                <div class="product-details-container">
+                    <span class="badge-secondary">O MAIOR NÚMERO DE VAGAS</span>
+                    <h3>Agente Censitário Supervisor (ACS)</h3>
+                    <p style="color: #64748b; font-size: 0.95em;">Remuneração: R$ 3.480,00 | Exige Ensino Médio e CNH B.</p>
+                    <ul>
+                        <li>✅ Língua Portuguesa e Raciocínio Lógico (RLM)</li>
+                        <li>✅ Noções de Administração / Situações Gerenciais</li>
+                        <li>✅ Conhecimentos Técnicos e Censitários Oficiais</li>
+                        <li>✅ Caderno prático de Questões da banca IBFC</li>
+                    </ul>
+                    
+                    <div class="purchase-options">
+                        <div class="option-upgrade">
+                            <span class="badge-upgrade">🏆 O MAPA DA APROVAÇÃO</span>
+                            <span style="font-size: 0.95em; color: var(--secondary); font-weight: bold; display: block; margin-bottom: 5px;">Apostila Completa + Guia de Estudos (14 Semanas) + Caderno de Erros</span>
+                            <span class="price">R$ 116,90</span>
+                            <!-- Link de Checkout Combo ACS -->
+                            <a href="#" class="btn-full">QUERO O COMBO COMPLETO</a>
+                        </div>
+                        <div class="option-basic">
+                            <span style="font-size: 0.9em; color: #64748b; display: block;">Apenas a Apostila (Sem os Bônus de Planejamento)</span>
+                            <span class="price">R$ 97,00</span>
+                            <!-- Link de Checkout Apostila ACS -->
+                            <a href="#" class="btn-outline">COMPRAR APENAS APOSTILA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. ACR -->
+    <div id="tab-acr" class="tab-pane">
+        <div class="pricing-wrapper">
+            <div class="price-box">
+                <div class="product-image-container">
+                    <img src="watermarked_img_6126160685121483321.png" alt="Material Agente Censitário Regional">
+                </div>
+                
+                <div class="product-details-container">
+                    <span class="badge-secondary">A MAIOR REMUNERAÇÃO</span>
+                    <h3>Agente Censitário Regional (ACR)</h3>
+                    <p style="color: #64748b; font-size: 0.95em;">Remuneração: R$ 4.008,00 | O topo da pirâmide salarial do edital!</p>
+                    <ul>
+                        <li>✅ Português e RLM mastigados passo a passo</li>
+                        <li>✅ Administração / Situações Gerenciais p/ Liderança</li>
+                        <li>✅ Conhecimentos Técnicos do Censo Agropecuário</li>
+                        <li>✅ Questões gabaritadas para treinar o padrão IBFC</li>
+                    </ul>
+                    
+                    <div class="purchase-options">
+                        <div class="option-upgrade">
+                            <span class="badge-upgrade">🏆 O MAPA DA APROVAÇÃO</span>
+                            <span style="font-size: 0.95em; color: var(--secondary); font-weight: bold; display: block; margin-bottom: 5px;">Apostila Completa + Guia de Estudos (14 Semanas) + Caderno de Erros</span>
+                            <span class="price">R$ 116,90</span>
+                            <!-- Link de Checkout Combo ACR -->
+                            <a href="#" class="btn-full">QUERO O COMBO COMPLETO</a>
+                        </div>
+                        <div class="option-basic">
+                            <span style="font-size: 0.9em; color: #64748b; display: block;">Apenas a Apostila (Sem os Bônus de Planejamento)</span>
+                            <span class="price">R$ 97,00</span>
+                            <!-- Link de Checkout Apostila ACR -->
+                            <a href="#" class="btn-outline">COMPRAR APENAS APOSTILA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. AOR -->
+    <div id="tab-aor" class="tab-pane">
+        <div class="pricing-wrapper">
+            <div class="price-box">
+                <div class="product-image-container">
+                    <img src="watermarked_img_6126160685121483321.png" alt="Material Agente Operacional Regional">
+                </div>
+                
+                <div class="product-details-container">
+                    <span class="badge-secondary">CARGO ESTRATÉGICO DE GESTÃO</span>
+                    <h3>Agente Operacional Regional (AOR)</h3>
+                    <p style="color: #64748b; font-size: 0.95em;">Remuneração: R$ 4.008,00 | Foco total na gestão do Posto Censitário!</p>
+                    <ul>
+                        <li>✅ Língua Portuguesa e Lógica esquematizadas</li>
+                        <li>✅ Administração e Situações Gerenciais da IBFC</li>
+                        <li>✅ <strong>Informática Básica</strong> (Windows, Office e Segurança)</li>
+                        <li>✅ Raio-X de questões para não zerar nenhuma disciplina</li>
+                    </ul>
+                    
+                    <div class="purchase-options">
+                        <div class="option-upgrade">
+                            <span class="badge-upgrade">🏆 O MAPA DA APROVAÇÃO</span>
+                            <span style="font-size: 0.95em; color: var(--secondary); font-weight: bold; display: block; margin-bottom: 5px;">Apostila Completa + Guia de Estudos (14 Semanas) + Caderno de Erros</span>
+                            <span class="price">R$ 116,90</span>
+                            <!-- Link de Checkout Combo AOR -->
+                            <a href="#" class="btn-full">QUERO O COMBO COMPLETO</a>
+                        </div>
+                        <div class="option-basic">
+                            <span style="font-size: 0.9em; color: #64748b; display: block;">Apenas a Apostila (Sem os Bônus de Planejamento)</span>
+                            <span class="price">R$ 97,00</span>
+                            <!-- Link de Checkout Apostila AOR -->
+                            <a href="#" class="btn-outline">COMPRAR APENAS APOSTILA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. ACA / ACI -->
+    <div id="tab-aca-aci" class="tab-pane">
+        <div class="pricing-wrapper">
+            <div class="price-box">
+                <div class="product-image-container">
+                    <img src="watermarked_img_6126160685121483321.png" alt="Material Agente Administrativo e Informática">
+                </div>
+                
+                <div class="product-details-container">
+                    <span class="badge-secondary">VAGAS ESTRATÉGICAS DE APOIO</span>
+                    <h3>Agentes Administrativo (ACA) ou Informática (ACI)</h3>
+                    <p style="color: #64748b; font-size: 0.95em;">Remuneração: R$ 2.128,00 | Exige apenas Ensino Médio completo.</p>
+                    <div class="bonus-free">
+                        <strong>Atenção:</strong> Após a compra, você receberá a apostila exata contendo o eixo específico do seu cargo (Administração ou Informática Avançada).
+                    </div>
+                    <ul>
+                        <li>✅ Base forte em Português e Raciocínio Lógico</li>
+                        <li>✅ Teoria direto ao ponto no seu eixo de conhecimento</li>
+                        <li>✅ Baterias de questões comentadas padrão IBFC</li>
+                    </ul>
+                    
+                    <div class="purchase-options">
+                        <div class="option-upgrade">
+                            <span class="badge-upgrade">🏆 O MAPA DA APROVAÇÃO</span>
+                            <span style="font-size: 0.95em; color: var(--secondary); font-weight: bold; display: block; margin-bottom: 5px;">Apostila Completa (ACA/ACI) + Guia de Estudos + Caderno de Erros</span>
+                            <span class="price">R$ 116,90</span>
+                            <!-- Link de Checkout Combo ACA/ACI -->
+                            <a href="#" class="btn-full">QUERO O COMBO COMPLETO</a>
+                        </div>
+                        <div class="option-basic">
+                            <span style="font-size: 0.9em; color: #64748b; display: block;">Apenas a Apostila (Sem os Bônus de Planejamento)</span>
+                            <span class="price">R$ 97,00</span>
+                            <!-- Link de Checkout Apostila ACA/ACI -->
+                            <a href="#" class="btn-outline">COMPRAR APENAS APOSTILA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- PROFESSORES -->
+<section style="background: white; padding: 60px 20px; border-top: 1px solid #e2e8f0;">
+    <div class="container">
+        <h2 style="text-align: center; color: var(--primary); margin-bottom: 10px; font-size: 2.2em;">Quem preparou este material?</h2>
+        <p style="text-align: center; color: #64748b; font-size: 1.1em;">A união da Estratégia Pedagógica com a Tecnologia para a sua aprovação no IBGE.</p>
+        
+        <div class="profile-grid">
+            <div class="profile-card">
+                <img src="img/cintia.png" alt="Professora Cíntia Faleiros Silva Chagas" class="profile-photo" onerror="this.src='https://via.placeholder.com/180?text=Prof+Cintia'">
+                <h3>Cíntia Faleiros S. Chagas</h3>
+                <span class="profile-role">Núcleo de Aprendizagem InfoFC</span>
+                <p style="font-size: 0.95em; color: #475569;">
+                    <strong>Especialista em Planejamento</strong><br><br>
+                    Com vasta experiência em didática e concursos públicos, a Profª Cíntia é a responsável por transformar os densos editais do IBGE em materiais esquematizados e cronogramas à prova de falhas. É a mente por trás da nossa <em>Metodologia dos 3 Passos</em>.
+                </p>
+            </div>
+            
+            <div class="profile-card">
+                <img src="img/felipe.png" alt="Felipe Eduardo Faleiros Chagas" class="profile-photo" onerror="this.src='https://via.placeholder.com/180?text=Prof+Felipe'">
+                <h3>Felipe Eduardo F. Chagas</h3>
+                <span class="profile-role">InfoFC Informática</span>
+                <p style="font-size: 0.95em; color: #475569;">
+                    <strong>Diretor Técnico</strong><br><br>
+                    Especialista responsável pelos eixos de Informática, Raciocínio Lógico e Tecnologia. Seu objetivo na <strong>InfoFC</strong> é mapear o estilo de cobrança da banca IBFC, eliminando jargões complexos e entregando o conteúdo mastigado para você gabaritar.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <a href="termo.html" style="color: #cbd5e1; font-weight: bold; text-decoration: none; text-transform: uppercase;">Aviso Legal e Termos de Uso</a>
+        <p style="margin-top: 20px; font-size: 1.1em;"><strong>Núcleo de Aprendizagem InfoFC</strong></p>
+        <p>Preparação Estratégica para Concursos Públicos</p>
+        <p style="font-size: 0.85em; margin-top: 15px; color: #64748b;">Este site e os materiais oferecidos são uma produção independente da InfoFC. Não possuímos vínculo governamental ou parceria direta com o Instituto Brasileiro de Geografia e Estatística (IBGE) ou com a banca organizadora (IBFC).</p>
+        <p style="font-size: 0.8em; margin-top: 15px;">&copy; 2026 InfoFC. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<!-- NOTIFICAÇÃO DE VENDAS -->
+<div id="sales-toast" class="sales-toast">
+    <div class="toast-icon">🔥</div>
+    <div class="toast-content">
+        <p class="toast-title"><span id="sales-count">24</span> pessoas garantiram o material do IBGE hoje!</p>
+        <p class="toast-subtitle" style="color: #94a3b8;">Acesso digital imediato após o pagamento.</p>
+    </div>
+    <button class="toast-close" onclick="fecharToast()">×</button>
+</div>
+
+<!-- LOGO DO WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5535999012019" target="_blank" class="floating-logo" title="Dúvidas? Fale com a InfoFC">
+    <!-- Você pode usar um icone do Whatsapp em SVG ou FontAwesome aqui, deixei o símbolo genérico -->
+    &#9993;
+</a>
+
+<script>
+    // --- LÓGICA DAS ABAS PRINCIPAIS ---
+    function openTab(evt, tabName) {
+        var tabpanes = document.getElementsByClassName("tab-pane");
+        for (var i = 0; i < tabpanes.length; i++) {
+            tabpanes[i].style.display = "none";
+            tabpanes[i].classList.remove("active");
+        }
+
+        var tabbtns = document.getElementsByClassName("tab-btn");
+        for (var i = 0; i < tabbtns.length; i++) {
+            tabbtns[i].classList.remove("active");
+        }
+
+        var selectedTab = document.getElementById(tabName);
+        selectedTab.style.display = "block";
+        
+        setTimeout(() => {
+            selectedTab.classList.add("active");
+        }, 10);
+        
+        evt.currentTarget.classList.add("active");
+    }
+
+    // --- LÓGICA DA NOTIFICAÇÃO DE VENDAS ---
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const KEY_STORAGE = 'infofc_sales_ibge'; 
+        const TEMPO_EXPIRACAO = 24 * 60 * 60 * 1000; 
+        const agora = new Date().getTime();
+
+        let numeroVendas;
+        const dadoSalvo = localStorage.getItem(KEY_STORAGE);
+
+        if (dadoSalvo) {
+            const objeto = JSON.parse(dadoSalvo);
+            if (agora - objeto.timestamp < TEMPO_EXPIRACAO) {
+                numeroVendas = objeto.value; 
+            }
+        }
+
+        if (!numeroVendas) {
+            numeroVendas = getRandomInt(45, 112); // Números maiores pois IBGE é nacional
+            localStorage.setItem(KEY_STORAGE, JSON.stringify({
+                value: numeroVendas,
+                timestamp: agora
+            }));
+        }
+
+        document.getElementById('sales-count').innerText = numeroVendas;
+
+        setTimeout(function() {
+            document.getElementById('sales-toast').classList.add('show');
+        }, 4000);
+    });
+
+    function fecharToast() {
+        document.getElementById('sales-toast').classList.remove('show');
+    }
+</script>
 
 </body>
 </html>
