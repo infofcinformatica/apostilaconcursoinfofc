@@ -50,7 +50,7 @@
         
         header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 60px 20px; text-align: center; border-bottom: 4px solid var(--accent); }
         
-        .container { max-width: 1140px; margin: auto; padding: 20px; } /* Ajustado para acomodar o vídeo de 1080px perfeitamente com as margens */
+        .container { max-width: 1140px; margin: auto; padding: 20px; } 
         
         .badge { background: var(--accent); color: #fff; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px;}
         .badge-secondary { background: var(--secondary); color: #fff; padding: 4px 12px; border-radius: 15px; font-weight: bold; font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 10px; border: 1px solid #334155;}
@@ -175,14 +175,14 @@
         .price-box li { margin-bottom: 12px; font-size: 1em; }
         .bonus-free { background: #fef2f2; border: 1px dashed var(--accent); padding: 12px; border-radius: 8px; color: var(--accent-hover); font-size: 0.9em; margin-top: 15px; margin-bottom: 20px; font-weight: bold;}
 
-        /* SEÇÃO DE VÍDEO (Ajustada para 1080px e Responsividade Iframe) */
+        /* SEÇÃO DE VÍDEO */
         .video-section { background: #e2e8f0; padding: 60px 20px; border-bottom: 1px solid #cbd5e1; text-align: center;}
         
         .video-wrapper {
             position: relative;
-            max-width: 1080px; /* Alterado para 1080px conforme solicitado */
+            max-width: 1080px;
             margin: 0 auto; 
-            padding-bottom: 56.25%; /* Proporção 16:9 (HD) para iframes responsivos */
+            padding-bottom: 56.25%; 
             height: 0;
             box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             border-radius: 12px;
@@ -204,7 +204,22 @@
         .profile-photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent); margin-bottom: 20px; padding: 3px; }
         .profile-role { color: var(--accent); font-weight: bold; font-size: 0.9em; text-transform: uppercase; margin-bottom: 10px; display: block; }
 
-        footer { text-align: center; padding: 40px; background: #0f172a; color: #94a3b8; margin-top: 50px; }
+        /* FAQ ACCORDION */
+        .faq-section { background: white; padding: 60px 20px; border-top: 1px solid #e2e8f0; }
+        .faq-container { max-width: 800px; margin: auto; }
+        .faq-title { text-align: center; color: var(--primary); font-size: 2.2em; margin-bottom: 30px; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 15px 0; }
+        .faq-question { font-weight: bold; font-size: 1.1em; color: var(--secondary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: color 0.3s;}
+        .faq-question:hover { color: var(--accent); }
+        .faq-answer { display: none; padding-top: 15px; color: #475569; font-size: 0.95em; line-height: 1.6; }
+        .faq-question::after { content: '+'; font-size: 1.5em; color: var(--accent); transition: transform 0.3s; }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
+        .faq-item.active .faq-answer { display: block; animation: fadeIn 0.3s; }
+
+        /* GARANTIA & FOOTER */
+        .guarantee-section { background: #f8fafc; padding: 40px 20px; text-align: center; border-top: 1px solid #e2e8f0; }
+        
+        footer { text-align: center; padding: 40px; background: #0f172a; color: #94a3b8; }
 
         /* NOTIFICAÇÃO E FLOATING */
         .sales-toast { position: fixed; bottom: 20px; left: 50%; background: #0f172a; color: white; padding: 15px 20px; border-radius: 12px; display: flex; align-items: center; gap: 15px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.4); z-index: 1000; max-width: 350px; opacity: 0; transform: translateY(50px); transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); pointer-events: none; border-left: 4px solid var(--accent);}
@@ -221,23 +236,9 @@
         /* RESPONSIVIDADE */
         @media (max-width: 768px) {
             .header-flex { flex-direction: column-reverse; text-align: center; }
-            
-            .price-box {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-                gap: 20px;
-            }
-            .product-image-container {
-                flex: 0 0 auto;
-                width: 100%;
-                max-width: 250px;
-            }
-            .price-box ul {
-                text-align: left;
-                display: inline-block;
-            }
-            
+            .price-box { flex-direction: column; text-align: center; padding: 20px; gap: 20px; }
+            .product-image-container { flex: 0 0 auto; width: 100%; max-width: 250px; }
+            .price-box ul { text-align: left; display: inline-block; }
             .tabs-nav { flex-direction: column; padding: 0 20px; }
             .tab-btn { width: 100%; text-align: center; }
         }
@@ -276,7 +277,6 @@
             Dê o play abaixo e entenda como estruturamos nosso material para garantir que você não zere nenhuma matéria e conquiste sua vaga.
         </p>
 
-        <!-- Correção: Vídeo em 1080px (responsivo 16:9) e tag <a> removida -->
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/ziSLS39CkW4?si=mupXRZJbG3MKl3-g" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
@@ -324,13 +324,13 @@
                             <span class="badge-upgrade">🏆 O MAPA DA APROVAÇÃO</span>
                             <span style="font-size: 0.95em; color: var(--secondary); font-weight: bold; display: block; margin-bottom: 5px;">Apostila Completa + Guia de Estudos (14 Semanas) + Caderno de Erros</span>
                             <span class="price">R$ 116,90</span>
-                            <!-- Link de Checkout Combo ACS -->
+                            <!-- Link Preservado e Original -->
                             <a href="https://pay.hotmart.com/L106458045B?off=2961q4vf" class="btn-full">QUERO O COMBO COMPLETO</a>
                         </div>
                         <div class="option-basic">
                             <span style="font-size: 0.9em; color: #64748b; display: block;">Apenas a Apostila (Sem os Bônus de Planejamento)</span>
                             <span class="price">R$ 97,00</span>
-                            <!-- Link de Checkout Apostila ACS -->
+                            <!-- Link Preservado e Original -->
                             <a href="https://pay.hotmart.com/L106458045B?off=7c4eagqt" class="btn-outline">COMPRAR APENAS APOSTILA</a>
                         </div>
                     </div>
@@ -363,13 +363,13 @@
                             <span class="badge-upgrade">🏆 O MAPA DA APROVAÇÃO</span>
                             <span style="font-size: 0.95em; color: var(--secondary); font-weight: bold; display: block; margin-bottom: 5px;">Apostila Completa + Guia de Estudos (14 Semanas) + Caderno de Erros</span>
                             <span class="price">R$ 116,90</span>
-                            <!-- Link de Checkout Combo ACR -->
+                            <!-- Link Preservado e Original -->
                             <a href="https://pay.hotmart.com/A106465348O?off=ukaij0hc" class="btn-full">QUERO O COMBO COMPLETO</a>
                         </div>
                         <div class="option-basic">
                             <span style="font-size: 0.9em; color: #64748b; display: block;">Apenas a Apostila (Sem os Bônus de Planejamento)</span>
                             <span class="price">R$ 97,00</span>
-                            <!-- Link de Checkout Apostila ACR -->
+                            <!-- Link Preservado e Original -->
                             <a href="https://pay.hotmart.com/A106465348O?off=39s6p5r7" class="btn-outline">COMPRAR APENAS APOSTILA</a>
                         </div>
                     </div>
@@ -402,13 +402,13 @@
                             <span class="badge-upgrade">🏆 O MAPA DA APROVAÇÃO</span>
                             <span style="font-size: 0.95em; color: var(--secondary); font-weight: bold; display: block; margin-bottom: 5px;">Apostila Completa + Guia de Estudos (14 Semanas) + Caderno de Erros</span>
                             <span class="price">R$ 116,90</span>
-                            <!-- Link de Checkout Combo AOR -->
+                            <!-- Link Preservado e Original -->
                             <a href="https://pay.hotmart.com/S106465515G?off=eda1q06c" class="btn-full">QUERO O COMBO COMPLETO</a>
                         </div>
                         <div class="option-basic">
                             <span style="font-size: 0.9em; color: #64748b; display: block;">Apenas a Apostila (Sem os Bônus de Planejamento)</span>
                             <span class="price">R$ 97,00</span>
-                            <!-- Link de Checkout Apostila AOR -->
+                            <!-- Link Preservado e Original -->
                             <a href="https://pay.hotmart.com/S106465515G?off=0c6qynt6" class="btn-outline">COMPRAR APENAS APOSTILA</a>
                         </div>
                     </div>
@@ -440,13 +440,13 @@
                             <span class="badge-upgrade">🏆 O MAPA DA APROVAÇÃO</span>
                             <span style="font-size: 0.95em; color: var(--secondary); font-weight: bold; display: block; margin-bottom: 5px;">Apostila Completa + Guia de Estudos (14 Semanas) + Caderno de Erros</span>
                             <span class="price">R$ 116,90</span>
-                            <!-- Link de Checkout Combo ACA -->
+                            <!-- Link Preservado e Original -->
                             <a href="https://pay.hotmart.com/G106463981R?off=hab9js1l" class="btn-full">QUERO O COMBO COMPLETO</a>
                         </div>
                         <div class="option-basic">
                             <span style="font-size: 0.9em; color: #64748b; display: block;">Apenas a Apostila (Sem os Bônus de Planejamento)</span>
                             <span class="price">R$ 97,00</span>
-                            <!-- Link de Checkout Apostila ACA -->
+                            <!-- Link Preservado e Original -->
                             <a href="https://pay.hotmart.com/G106463981R?off=f9vxivmh" class="btn-outline">COMPRAR APENAS APOSTILA</a>
                         </div>
                     </div>
@@ -478,13 +478,13 @@
                             <span class="badge-upgrade">🏆 O MAPA DA APROVAÇÃO</span>
                             <span style="font-size: 0.95em; color: var(--secondary); font-weight: bold; display: block; margin-bottom: 5px;">Apostila Completa + Guia de Estudos (14 Semanas) + Caderno de Erros</span>
                             <span class="price">R$ 116,90</span>
-                            <!-- Link de Checkout Combo ACI -->
+                            <!-- Link Preservado e Original -->
                             <a href="https://pay.hotmart.com/B106464274F?off=7ktnln5e" class="btn-full">QUERO O COMBO COMPLETO</a>
                         </div>
                         <div class="option-basic">
                             <span style="font-size: 0.9em; color: #64748b; display: block;">Apenas a Apostila (Sem os Bônus de Planejamento)</span>
                             <span class="price">R$ 97,00</span>
-                            <!-- Link de Checkout Apostila ACI -->
+                            <!-- Link Preservado e Original -->
                             <a href="https://pay.hotmart.com/B106464274F?off=se5y9lgy" class="btn-outline">COMPRAR APENAS APOSTILA</a>
                         </div>
                     </div>
@@ -494,6 +494,48 @@
     </div>
 
 </div>
+
+<!-- SEÇÃO DE FAQ (NOVA) -->
+<section class="faq-section" id="faq">
+    <div class="faq-container">
+        <h2 class="faq-title">Perguntas Frequentes</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">O material está 100% atualizado para o Edital 01/2026?</div>
+            <div class="faq-answer">
+                <p>Sim! Ao cruzar o conteúdo programático da nossa apostila com as regras do Edital nº 01/2026 (organizado pela IBFC), garantimos total alinhamento estratégico. Por exemplo, para o cargo de ACS, as disciplinas de Língua Portuguesa, Raciocínio Lógico, Administração e Conhecimentos Técnicos contemplam rigorosamente o escopo exigido.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">A apostila ensina as "pegadinhas" específicas da banca IBFC?</div>
+            <div class="faq-answer">
+                <p>Com certeza. Nossa abordagem é focada no perfil da banca. Em Português, alertamos sobre o "Fenômeno da Extrapolação"; em RLM, dominamos o macete do "MANÉ" para a Negação da Condicional e a Lógica dos Calendários; em Administração, atacamos o ciclo PODC e as teorias de motivação que a IBFC adora cobrar em "Situações Gerenciais".</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">Os Conhecimentos Técnicos já englobam o 12º Censo Agropecuário?</div>
+            <div class="faq-answer">
+                <p>Sim. O material foi atualizado trazendo o contexto real do 12º Censo Agropecuário, Florestal e Aquícola (abertura do edital 2026), abordando com exatidão conceitos como "Estabelecimento Agropecuário" e "Produtor Sem Área".</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">As questões da apostila possuem gabarito comentado?</div>
+            <div class="faq-answer">
+                <p>Sem dúvida. Trazemos o gabarito comentado item por item, justificando o porquê do erro ou acerto de cada alternativa. Além disso, incluímos cadernos de questões reais de provas anteriores da IBFC (como a de 2023) para que você teste seus conhecimentos no nível exato da prova.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">Como vou receber o meu material?</div>
+            <div class="faq-answer">
+                <p>O acesso é imediato! Assim que o seu pagamento for aprovado (o Pix e o Cartão de Crédito liberam na hora), você receberá um e-mail da Hotmart com o seu login e senha para baixar as apostilas em PDF e o seu Guia de Estudos na nossa área de membros exclusiva.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- PROFESSORES -->
 <section style="background: white; padding: 60px 20px; border-top: 1px solid #e2e8f0;">
@@ -525,11 +567,11 @@
     </div>
 </section>
 
-<!-- SEÇÃO DE GARANTIA (NOVO) -->
-<section style="background: #f8fafc; padding: 40px 20px; text-align: center; border-top: 1px solid #e2e8f0;">
+<!-- SEÇÃO DE GARANTIA -->
+<section class="guarantee-section">
     <div class="container">
         <h3 style="color: var(--primary); font-size: 1.8em; margin-bottom: 10px;">Garantia Incondicional de 7 Dias</h3>
-        <p style="color: #475569; max-width: 600px; margin: 0 auto; font-size: 1.05em;">O risco é todo nosso! Acesse o material, baixe o seu cronograma e assista à metodologia. Se por qualquer motivo você não gostar ou achar que não é para você, basta solicitar o reembolso na plataforma Hotmart dentro de 7 dias e devolvemos 100% do seu dinheiro. Sem perguntas.</p>
+        <p style="color: #475569; max-width: 600px; margin: 0 auto; font-size: 1.05em;">O risco é todo nosso! Acesse o material, baixe o seu cronograma e aplique a metodologia. Se por qualquer motivo você achar que não é para você, basta solicitar o reembolso na plataforma Hotmart dentro de 7 dias e devolvemos 100% do seu dinheiro. Sem letras miúdas.</p>
     </div>
 </section>
 
@@ -553,9 +595,9 @@
     <button class="toast-close" onclick="fecharToast()">×</button>
 </div>
 
-<!-- LOGO DO WHATSAPP FLUTUANTE (Corrigido para Ícone SVG real) -->
+<!-- LOGO DO WHATSAPP FLUTUANTE -->
 <a href="https://wa.me/5535999012019" target="_blank" class="floating-logo" title="Dúvidas? Fale com a InfoFC">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
 </a>
 
 <script>
@@ -580,6 +622,11 @@
         }, 10);
         
         evt.currentTarget.classList.add("active");
+    }
+
+    // --- LÓGICA DO FAQ (SANFONA) ---
+    function toggleFAQ(element) {
+        element.parentElement.classList.toggle('active');
     }
 
     // --- LÓGICA DA NOTIFICAÇÃO DE VENDAS ---
